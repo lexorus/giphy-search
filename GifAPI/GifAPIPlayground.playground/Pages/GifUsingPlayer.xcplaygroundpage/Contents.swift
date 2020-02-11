@@ -4,7 +4,7 @@ import AVFoundation
 import PlaygroundSupport
 import GifAPI
 
-let giphyAPI = GiphyAPI(apiKey: "your_giphy_api_token")
+let giphyAPI: GifAPI = GiphyAPI(apiKey: "your_giphy_api_token")
 
 let playerViewController = AVPlayerViewController()
 let playerView = AVQueuePlayer()

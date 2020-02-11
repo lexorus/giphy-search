@@ -1,6 +1,8 @@
 import Foundation
 
-final public class GiphyAPI {
+public typealias NetworkCompletion<T> = (Result<T, NetworkError>) -> Void
+
+final public class GiphyAPI: GifAPI {
     private let network: Network
     private let requestFactory: GiphyRequestFactory
 
@@ -14,7 +16,7 @@ final public class GiphyAPI {
     }
 
     @discardableResult
-    public func getRandomGIF(completion: @escaping (Result<Gif, NetworkError>) -> Void) -> NetworkTask? {
+    public func getRandomGIF(completion: @escaping NetworkCompletion<Gif>) -> NetworkTask? {
         guard let urlRequest = requestFactory.randomGIFURLRequest() else {
             completion(.failure(.failedToBuildURL))
             return nil
@@ -23,8 +25,22 @@ final public class GiphyAPI {
     }
 
     @discardableResult
+    public func searchForGifs(with query: String,
+                              pageSize: UInt,
+                              offset: UInt,
+                              completion: @escaping NetworkCompletion<[Gif]>)  -> NetworkTask? {
+        guard let urlRequest = requestFactory.searchForGifsURLRequest(query: query,
+                                                                      limit: pageSize,
+                                                                      offset: offset) else {
+            completion(.failure(.failedToBuildURL))
+            return nil
+        }
+        return get(from: urlRequest, completion: completion)
+    }
+
+    @discardableResult
     public func getStillImageData(for gif: Gif,
-                                  completion: @escaping (Result<Data, NetworkError>) -> Void) -> NetworkTask? {
+                                  completion: @escaping NetworkCompletion<Data>) -> NetworkTask? {
         guard let url = URL(string: gif.stillImageURL) else {
             completion(.failure(.failedToBuildURL))
             return nil
@@ -36,7 +52,7 @@ final public class GiphyAPI {
 
     @discardableResult
     private func get<T: Decodable & Equatable>(from urlRequest: URLRequest,
-                                               completion: @escaping (Result<T, NetworkError>) -> Void) -> NetworkTask {
+                                               completion: @escaping NetworkCompletion<T>) -> NetworkTask {
         return getData(from: urlRequest) { result in
             switch result {
             case .success(let data):
@@ -59,7 +75,7 @@ final public class GiphyAPI {
 
     @discardableResult
     private func getData(from urlRequest: URLRequest,
-                         completion: @escaping (Result<Data, NetworkError>) -> Void) -> NetworkTask {
+                         completion: @escaping NetworkCompletion<Data>) -> NetworkTask {
         let task = network.dataTask(with: urlRequest) { result in
             switch result {
             case .success(let data):

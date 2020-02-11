@@ -3,7 +3,7 @@ import UIKit
 import PlaygroundSupport
 import GifAPI
 
-let giphyAPI = GiphyAPI(apiKey: "your_giphy_api_token")
+let giphyAPI: GifAPI = GiphyAPI(apiKey: "your_giphy_api_token")
 
 let imageView = UIImageView(frame: .init(x: 0, y: 0, width: 300, height: 300))
 PlaygroundPage.current.liveView = imageView

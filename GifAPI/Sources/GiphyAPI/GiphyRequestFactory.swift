@@ -29,6 +29,19 @@ final class GiphyRequestFactory {
         return urlRequest
     }
 
+    func searchForGifsURLRequest(query: String, limit: UInt, offset: UInt) -> URLRequest? {
+        let path = "/search"
+        guard var url = url(for: path) else { return nil }
+        let params = ["q": query,
+                      "limit": "\(limit)",
+            "offset": "\(offset)"].merging(sharedParams, uniquingKeysWith: { $1 })
+        url = url.appendingQueryParameters(params)
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "GET"
+
+        return urlRequest
+    }
+
     private func url(for path: String) -> URL? {
         return URL(string: baseURL + path)
     }
