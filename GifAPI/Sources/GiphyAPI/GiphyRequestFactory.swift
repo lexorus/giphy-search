@@ -19,16 +19,6 @@ final class GiphyRequestFactory {
         return urlRequest
     }
 
-    func getGIFURLRequest(for id: String) -> URLRequest? {
-        let path = "/\(id)"
-        guard var url = url(for: path) else { return nil }
-        url = url.appendingQueryParameters(sharedParams)
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "GET"
-
-        return urlRequest
-    }
-
     func searchForGifsURLRequest(query: String, limit: UInt, offset: UInt) -> URLRequest? {
         let path = "/search"
         guard var url = url(for: path) else { return nil }

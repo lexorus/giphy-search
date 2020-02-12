@@ -25,8 +25,10 @@ public struct Gif: Decodable & Equatable {
         case url
         case mp4
     }
+}
 
-    public init(from decoder: Decoder) throws {
+public extension Gif {
+    init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         id = try container.decode(String.self, forKey: .id)
         title = try container.decode(String.self, forKey: .title)
