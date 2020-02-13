@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "65F667F623F0498900AA88B3"
-               BuildableName = "GiphySearchChallenge.app"
-               BlueprintName = "GiphySearchChallenge"
+               BlueprintIdentifier = "656CFB4923F54BD00097A1B5"
+               BuildableName = "GiphySearchUI.framework"
+               BlueprintName = "GiphySearchUI"
                ReferencedContainer = "container:GiphySearchChallenge.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,26 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "65F6680C23F0498A00AA88B3"
-               BuildableName = "GiphySearchChallengeTests.xctest"
-               BlueprintName = "GiphySearchChallengeTests"
-               ReferencedContainer = "container:GiphySearchChallenge.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "65F6682823F04BCB00AA88B3"
-               BuildableName = "GifAPITests.xctest"
-               BlueprintName = "GifAPITests"
-               ReferencedContainer = "container:GiphySearchChallenge.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
          <TestableReference
             skipped = "NO">
             <BuildableReference
@@ -70,16 +50,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "65F667F623F0498900AA88B3"
-            BuildableName = "GiphySearchChallenge.app"
-            BlueprintName = "GiphySearchChallenge"
-            ReferencedContainer = "container:GiphySearchChallenge.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -87,16 +57,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "65F667F623F0498900AA88B3"
-            BuildableName = "GiphySearchChallenge.app"
-            BlueprintName = "GiphySearchChallenge"
+            BlueprintIdentifier = "656CFB4923F54BD00097A1B5"
+            BuildableName = "GiphySearchUI.framework"
+            BlueprintName = "GiphySearchUI"
             ReferencedContainer = "container:GiphySearchChallenge.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
