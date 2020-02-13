@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Gif Player View Controller-->
+        <scene sceneID="oh6-J2-eli">
+            <objects>
+                <viewController storyboardIdentifier="GifPlayerViewController" id="BGB-yX-ZBR" customClass="GifPlayerViewController" customModule="GiphySearchUI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LxB-oT-vKl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b9G-sl-M8m">
+                                <rect key="frame" x="20" y="64" width="374" height="374"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="b9G-sl-M8m" secondAttribute="height" multiplier="1:1" id="7gm-yC-Skn"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="pc1-v4-tk6" kind="embed" id="97s-gD-wJq"/>
+                                </connections>
+                            </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gNO-Sv-Y6N">
+                                <rect key="frame" x="20" y="448" width="374" height="414"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gif_title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1w-QG-Ndd">
+                                        <rect key="frame" x="0.0" y="0.0" width="57.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="https://url.to.gif" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xr5-bc-neS">
+                                        <rect key="frame" x="0.0" y="21" width="118" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="Xr5-bc-neS" firstAttribute="leading" secondItem="gNO-Sv-Y6N" secondAttribute="leading" id="AgN-vI-u1D"/>
+                                    <constraint firstItem="j1w-QG-Ndd" firstAttribute="top" secondItem="gNO-Sv-Y6N" secondAttribute="top" id="M2b-iQ-W79"/>
+                                    <constraint firstItem="j1w-QG-Ndd" firstAttribute="leading" secondItem="gNO-Sv-Y6N" secondAttribute="leading" id="W2z-ra-Ocx"/>
+                                    <constraint firstItem="Xr5-bc-neS" firstAttribute="top" secondItem="j1w-QG-Ndd" secondAttribute="bottom" id="fQF-SX-8FB"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="pnC-Hh-ieY" firstAttribute="trailing" secondItem="b9G-sl-M8m" secondAttribute="trailing" constant="20" id="2Lh-tb-iyU"/>
+                            <constraint firstItem="gNO-Sv-Y6N" firstAttribute="leading" secondItem="b9G-sl-M8m" secondAttribute="leading" id="7D9-Aj-Rqj"/>
+                            <constraint firstItem="b9G-sl-M8m" firstAttribute="leading" secondItem="pnC-Hh-ieY" secondAttribute="leading" constant="20" id="OFu-KG-dYo"/>
+                            <constraint firstItem="gNO-Sv-Y6N" firstAttribute="trailing" secondItem="b9G-sl-M8m" secondAttribute="trailing" id="Zdv-9I-M0D"/>
+                            <constraint firstItem="gNO-Sv-Y6N" firstAttribute="top" secondItem="b9G-sl-M8m" secondAttribute="bottom" constant="10" id="tOH-Lo-7lt"/>
+                            <constraint firstItem="b9G-sl-M8m" firstAttribute="top" secondItem="pnC-Hh-ieY" secondAttribute="top" constant="20" id="wge-dI-pmB"/>
+                            <constraint firstItem="pnC-Hh-ieY" firstAttribute="bottom" secondItem="gNO-Sv-Y6N" secondAttribute="bottom" id="x86-0k-dyJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="pnC-Hh-ieY"/>
+                    </view>
+                    <connections>
+                        <outlet property="gifTitle" destination="j1w-QG-Ndd" id="IuA-7q-fR0"/>
+                        <outlet property="gifURL" destination="Xr5-bc-neS" id="T2v-8S-Njv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gY1-Dw-e9i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+        <!--Player View Controller-->
+        <scene sceneID="OHC-7M-uoG">
+            <objects>
+                <viewController id="pc1-v4-tk6" customClass="AVPlayerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GQy-Up-V4u">
+                        <rect key="frame" x="0.0" y="0.0" width="374" height="374"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Bug-JI-5eE"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cUo-Ss-FK5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="878" y="-38"/>
+        </scene>
+    </scenes>
+</document>
