@@ -51,6 +51,7 @@
 		B13F09D823FB27A5001B625B /* RandomGifBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13F09D723FB27A5001B625B /* RandomGifBuilder.swift */; };
 		B13F09DA23FB27DF001B625B /* RandomGifViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13F09D923FB27DF001B625B /* RandomGifViewController.storyboard */; };
 		B1D4C89123FB300F00BB5918 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D4C89023FB300F00BB5918 /* UIViewControllerExtensions.swift */; };
+		B1D4C89323FB41C500BB5918 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D4C89223FB41C500BB5918 /* Scheduler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -173,6 +174,7 @@
 		B13F09D723FB27A5001B625B /* RandomGifBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGifBuilder.swift; sourceTree = "<group>"; };
 		B13F09D923FB27DF001B625B /* RandomGifViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RandomGifViewController.storyboard; sourceTree = "<group>"; };
 		B1D4C89023FB300F00BB5918 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		B1D4C89223FB41C500BB5918 /* Scheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -362,6 +364,7 @@
 				656CFB7323F54E350097A1B5 /* StoryboardInstantiable.swift */,
 				6576638F23F562A8007A4CBC /* Notifier.swift */,
 				6576639123F563A4007A4CBC /* Player.swift */,
+				B1D4C89223FB41C500BB5918 /* Scheduler.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -804,6 +807,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1D4C89323FB41C500BB5918 /* Scheduler.swift in Sources */,
 				6576639023F562A8007A4CBC /* Notifier.swift in Sources */,
 				656CFB7423F54E350097A1B5 /* StoryboardInstantiable.swift in Sources */,
 				B1D4C89123FB300F00BB5918 /* UIViewControllerExtensions.swift in Sources */,

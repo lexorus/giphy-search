@@ -19,7 +19,7 @@ final class GifPlayerPresenter {
          playerType: Player.Type = AVPlayer.self) {
         self.view = view
         self.data = data
-        self.playerType = playerType//.init(url: data.gifVideoURL)
+        self.playerType = playerType
         self.notifier = notifier
     }
 
@@ -28,6 +28,7 @@ final class GifPlayerPresenter {
     }
 
     private func play() {
+        notifier.removeObserver(self)
         player?.play()
         notifier.addObserver(self,
                             selector: #selector(replay),
