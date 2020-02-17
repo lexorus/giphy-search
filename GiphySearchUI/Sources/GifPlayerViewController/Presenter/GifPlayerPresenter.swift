@@ -7,18 +7,19 @@ protocol GifPlayerViewInput: class {
 
 final class GifPlayerPresenter {
     private let notifier: Notifier
-    private let data: GifPlayerData
-    private let player: Player
+    private let data: GifPlayerData?
+    private let playerType: Player.Type
+    private var player: Player?
 
     private weak var view: GifPlayerViewInput?
 
     init(view: GifPlayerViewInput,
-         data: GifPlayerData,
+         data: GifPlayerData? = nil,
          notifier: Notifier = NotificationCenter.default,
          playerType: Player.Type = AVPlayer.self) {
         self.view = view
         self.data = data
-        self.player = playerType.init(url: data.gifVideoURL)
+        self.playerType = playerType//.init(url: data.gifVideoURL)
         self.notifier = notifier
     }
 
@@ -27,21 +28,28 @@ final class GifPlayerPresenter {
     }
 
     private func play() {
-        player.play()
+        player?.play()
         notifier.addObserver(self,
                             selector: #selector(replay),
                             name: .AVPlayerItemDidPlayToEndTime)
     }
 
     @objc private func replay() {
-        player.seek(to: .zero)
-        player.play()
+        player?.seek(to: .zero)
+        player?.play()
     }
 }
 
 extension GifPlayerPresenter: GifPlayerViewOutput {
     func viewDidLoad() {
+        guard let data = data else { return }
+        playGif(with: data)
+    }
+
+    func playGif(with data: GifPlayerData) {
+        let player = playerType.init(url: data.gifVideoURL)
         view?.set(gifTitle: data.gifTitle, gifURL: data.gifURL, player: player)
+        self.player = player
         play()
     }
 }

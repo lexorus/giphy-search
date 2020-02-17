@@ -3,6 +3,7 @@ import AVKit
 
 protocol GifPlayerViewOutput {
     func viewDidLoad()
+    func playGif(with data: GifPlayerData)
 }
 
 public final class GifPlayerViewController: UIViewController, StoryboardInstantiable {
@@ -24,6 +25,10 @@ public final class GifPlayerViewController: UIViewController, StoryboardInstanti
         super.viewDidLoad()
 
         presenter?.viewDidLoad()
+    }
+
+    func playGif(with data: GifPlayerData) {
+        presenter?.playGif(with: data)
     }
 
     public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

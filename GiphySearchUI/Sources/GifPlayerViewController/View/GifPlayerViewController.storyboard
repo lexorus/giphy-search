@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b9G-sl-M8m">
-                                <rect key="frame" x="20" y="64" width="374" height="374"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="414"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="b9G-sl-M8m" secondAttribute="height" multiplier="1:1" id="7gm-yC-Skn"/>
                                 </constraints>
@@ -25,7 +25,7 @@
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gNO-Sv-Y6N">
-                                <rect key="frame" x="20" y="448" width="374" height="414"/>
+                                <rect key="frame" x="0.0" y="468" width="414" height="394"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gif_title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j1w-QG-Ndd">
                                         <rect key="frame" x="0.0" y="0.0" width="57.5" height="21"/>
@@ -51,12 +51,12 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="pnC-Hh-ieY" firstAttribute="trailing" secondItem="b9G-sl-M8m" secondAttribute="trailing" constant="20" id="2Lh-tb-iyU"/>
+                            <constraint firstItem="pnC-Hh-ieY" firstAttribute="trailing" secondItem="b9G-sl-M8m" secondAttribute="trailing" id="2Lh-tb-iyU"/>
                             <constraint firstItem="gNO-Sv-Y6N" firstAttribute="leading" secondItem="b9G-sl-M8m" secondAttribute="leading" id="7D9-Aj-Rqj"/>
-                            <constraint firstItem="b9G-sl-M8m" firstAttribute="leading" secondItem="pnC-Hh-ieY" secondAttribute="leading" constant="20" id="OFu-KG-dYo"/>
+                            <constraint firstItem="b9G-sl-M8m" firstAttribute="leading" secondItem="pnC-Hh-ieY" secondAttribute="leading" id="OFu-KG-dYo"/>
                             <constraint firstItem="gNO-Sv-Y6N" firstAttribute="trailing" secondItem="b9G-sl-M8m" secondAttribute="trailing" id="Zdv-9I-M0D"/>
                             <constraint firstItem="gNO-Sv-Y6N" firstAttribute="top" secondItem="b9G-sl-M8m" secondAttribute="bottom" constant="10" id="tOH-Lo-7lt"/>
-                            <constraint firstItem="b9G-sl-M8m" firstAttribute="top" secondItem="pnC-Hh-ieY" secondAttribute="top" constant="20" id="wge-dI-pmB"/>
+                            <constraint firstItem="b9G-sl-M8m" firstAttribute="top" secondItem="pnC-Hh-ieY" secondAttribute="top" id="wge-dI-pmB"/>
                             <constraint firstItem="pnC-Hh-ieY" firstAttribute="bottom" secondItem="gNO-Sv-Y6N" secondAttribute="bottom" id="x86-0k-dyJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pnC-Hh-ieY"/>
@@ -75,7 +75,7 @@
             <objects>
                 <viewController id="pc1-v4-tk6" customClass="AVPlayerViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GQy-Up-V4u">
-                        <rect key="frame" x="0.0" y="0.0" width="374" height="374"/>
+                        <rect key="frame" x="0.0" y="0.0" width="394" height="394"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Bug-JI-5eE"/>
