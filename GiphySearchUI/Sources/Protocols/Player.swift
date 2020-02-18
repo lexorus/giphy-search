@@ -1,9 +1,13 @@
 import AVFoundation
 
 protocol Player {
-    init(url: URL)
+    static func with(url: URL) -> Player
     func play()
     func seek(to: CMTime)
 }
 
-extension AVPlayer: Player { }
+extension AVPlayer: Player {
+    static func with(url: URL) -> Player {
+        return self.init(url: url)
+    }
+}

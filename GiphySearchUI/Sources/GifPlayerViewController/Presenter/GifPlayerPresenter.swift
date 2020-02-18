@@ -48,7 +48,7 @@ extension GifPlayerPresenter: GifPlayerViewOutput {
     }
 
     func playGif(with data: GifPlayerData) {
-        let player = playerType.init(url: data.gifVideoURL)
+        let player = playerType.with(url: data.gifVideoURL)
         view?.set(gifTitle: data.gifTitle, gifURL: data.gifURL, player: player)
         self.player = player
         play()
