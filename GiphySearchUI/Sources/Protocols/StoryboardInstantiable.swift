@@ -1,7 +1,6 @@
 import UIKit
 
-protocol StoryboardInstantiable {
-    static var identifier: String { get }
+protocol StoryboardInstantiable: IdentifiableType {
     static var storyboardName: String { get }
 }
 

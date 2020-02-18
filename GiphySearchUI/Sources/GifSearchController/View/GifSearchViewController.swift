@@ -4,7 +4,7 @@ protocol GifSearchViewOutput {
     
 }
 
-final class GifSearchViewController: UIViewController, StoryboardInstantiable {
+public final class GifSearchViewController: UIViewController, StoryboardInstantiable {
     static let identifier = "GifSearchViewController"
     static let storyboardName = "GifSearchViewController"
 

@@ -49,6 +49,10 @@
 		B13F09D623FB279C001B625B /* RandomGifPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13F09D523FB279C001B625B /* RandomGifPresenter.swift */; };
 		B13F09D823FB27A5001B625B /* RandomGifBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13F09D723FB27A5001B625B /* RandomGifBuilder.swift */; };
 		B13F09DA23FB27DF001B625B /* RandomGifViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B13F09D923FB27DF001B625B /* RandomGifViewController.storyboard */; };
+		B1CE792823FC80630039CB86 /* GifCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CE792623FC80630039CB86 /* GifCell.swift */; };
+		B1CE792923FC80630039CB86 /* GifCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1CE792723FC80630039CB86 /* GifCell.xib */; };
+		B1CE792B23FC80FA0039CB86 /* IdentifiableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CE792A23FC80FA0039CB86 /* IdentifiableType.swift */; };
+		B1CE792D23FC81A70039CB86 /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CE792C23FC81A70039CB86 /* UICollectionViewExtensions.swift */; };
 		B1D4C89123FB300F00BB5918 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D4C89023FB300F00BB5918 /* UIViewControllerExtensions.swift */; };
 		B1D4C89323FB41C500BB5918 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D4C89223FB41C500BB5918 /* Scheduler.swift */; };
 		B1D4C89723FB441C00BB5918 /* GifPlayerPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D4C89623FB441C00BB5918 /* GifPlayerPresenterTests.swift */; };
@@ -60,6 +64,10 @@
 		B1D4C8A923FC7A1B00BB5918 /* GifSearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1D4C8A823FC7A1B00BB5918 /* GifSearchViewController.storyboard */; };
 		B1D4C8AB23FC7A7C00BB5918 /* GifSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D4C8AA23FC7A7C00BB5918 /* GifSearchPresenter.swift */; };
 		B1D4C8AD23FC7AFA00BB5918 /* GifSearchBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D4C8AC23FC7AFA00BB5918 /* GifSearchBuilder.swift */; };
+		B1D4C8B323FC7D9100BB5918 /* GifSearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D4C8B223FC7D9100BB5918 /* GifSearchResultsViewController.swift */; };
+		B1D4C8B523FC7DA700BB5918 /* GifSearchResultsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1D4C8B423FC7DA700BB5918 /* GifSearchResultsViewController.storyboard */; };
+		B1D4C8B723FC7DE700BB5918 /* GifSearchResultsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D4C8B623FC7DE700BB5918 /* GifSearchResultsPresenter.swift */; };
+		B1D4C8B923FC7DF200BB5918 /* GifSearchResultsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D4C8B823FC7DF200BB5918 /* GifSearchResultsBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -180,6 +188,10 @@
 		B13F09D523FB279C001B625B /* RandomGifPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGifPresenter.swift; sourceTree = "<group>"; };
 		B13F09D723FB27A5001B625B /* RandomGifBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomGifBuilder.swift; sourceTree = "<group>"; };
 		B13F09D923FB27DF001B625B /* RandomGifViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RandomGifViewController.storyboard; sourceTree = "<group>"; };
+		B1CE792623FC80630039CB86 /* GifCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifCell.swift; sourceTree = "<group>"; };
+		B1CE792723FC80630039CB86 /* GifCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GifCell.xib; sourceTree = "<group>"; };
+		B1CE792A23FC80FA0039CB86 /* IdentifiableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiableType.swift; sourceTree = "<group>"; };
+		B1CE792C23FC81A70039CB86 /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensions.swift; sourceTree = "<group>"; };
 		B1D4C89023FB300F00BB5918 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		B1D4C89223FB41C500BB5918 /* Scheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
 		B1D4C89623FB441C00BB5918 /* GifPlayerPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifPlayerPresenterTests.swift; sourceTree = "<group>"; };
@@ -191,6 +203,10 @@
 		B1D4C8A823FC7A1B00BB5918 /* GifSearchViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GifSearchViewController.storyboard; sourceTree = "<group>"; };
 		B1D4C8AA23FC7A7C00BB5918 /* GifSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifSearchPresenter.swift; sourceTree = "<group>"; };
 		B1D4C8AC23FC7AFA00BB5918 /* GifSearchBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifSearchBuilder.swift; sourceTree = "<group>"; };
+		B1D4C8B223FC7D9100BB5918 /* GifSearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifSearchResultsViewController.swift; sourceTree = "<group>"; };
+		B1D4C8B423FC7DA700BB5918 /* GifSearchResultsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GifSearchResultsViewController.storyboard; sourceTree = "<group>"; };
+		B1D4C8B623FC7DE700BB5918 /* GifSearchResultsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifSearchResultsPresenter.swift; sourceTree = "<group>"; };
+		B1D4C8B823FC7DF200BB5918 /* GifSearchResultsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifSearchResultsBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -322,6 +338,7 @@
 		656CFB6723F54C2D0097A1B5 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				B1D4C8AE23FC7D5200BB5918 /* GifSearchResultsViewController */,
 				B1D4C8A223FC796F00BB5918 /* GifSearchController */,
 				650F5E1323F5929800AA885E /* RandomGifViewController */,
 				656CFB6C23F54D920097A1B5 /* GifPlayerViewController */,
@@ -383,6 +400,7 @@
 				6576638F23F562A8007A4CBC /* Notifier.swift */,
 				6576639123F563A4007A4CBC /* Player.swift */,
 				B1D4C89223FB41C500BB5918 /* Scheduler.swift */,
+				B1CE792A23FC80FA0039CB86 /* IdentifiableType.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -568,10 +586,20 @@
 			path = Builder;
 			sourceTree = "<group>";
 		};
+		B1CE792523FC80000039CB86 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B1CE792623FC80630039CB86 /* GifCell.swift */,
+				B1CE792723FC80630039CB86 /* GifCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		B1D4C88F23FB300000BB5918 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				B1D4C89023FB300F00BB5918 /* UIViewControllerExtensions.swift */,
+				B1CE792C23FC81A70039CB86 /* UICollectionViewExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -634,6 +662,42 @@
 			isa = PBXGroup;
 			children = (
 				B1D4C8AC23FC7AFA00BB5918 /* GifSearchBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		B1D4C8AE23FC7D5200BB5918 /* GifSearchResultsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B1D4C8AF23FC7D6900BB5918 /* View */,
+				B1D4C8B023FC7D6E00BB5918 /* Presenter */,
+				B1D4C8B123FC7D7500BB5918 /* Builder */,
+			);
+			path = GifSearchResultsViewController;
+			sourceTree = "<group>";
+		};
+		B1D4C8AF23FC7D6900BB5918 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B1CE792523FC80000039CB86 /* Cells */,
+				B1D4C8B223FC7D9100BB5918 /* GifSearchResultsViewController.swift */,
+				B1D4C8B423FC7DA700BB5918 /* GifSearchResultsViewController.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B1D4C8B023FC7D6E00BB5918 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B1D4C8B623FC7DE700BB5918 /* GifSearchResultsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B1D4C8B123FC7D7500BB5918 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				B1D4C8B823FC7DF200BB5918 /* GifSearchResultsBuilder.swift */,
 			);
 			path = Builder;
 			sourceTree = "<group>";
@@ -835,7 +899,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1CE792923FC80630039CB86 /* GifCell.xib in Resources */,
 				656CFB7023F54DD20097A1B5 /* GifPlayerViewController.storyboard in Resources */,
+				B1D4C8B523FC7DA700BB5918 /* GifSearchResultsViewController.storyboard in Resources */,
 				B1D4C8A923FC7A1B00BB5918 /* GifSearchViewController.storyboard in Resources */,
 				B13F09DA23FB27DF001B625B /* RandomGifViewController.storyboard in Resources */,
 			);
@@ -888,6 +954,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1CE792D23FC81A70039CB86 /* UICollectionViewExtensions.swift in Sources */,
+				B1CE792B23FC80FA0039CB86 /* IdentifiableType.swift in Sources */,
+				B1D4C8B723FC7DE700BB5918 /* GifSearchResultsPresenter.swift in Sources */,
 				B1D4C89323FB41C500BB5918 /* Scheduler.swift in Sources */,
 				6576639023F562A8007A4CBC /* Notifier.swift in Sources */,
 				656CFB7423F54E350097A1B5 /* StoryboardInstantiable.swift in Sources */,
@@ -900,8 +969,11 @@
 				B13F09D423FB2785001B625B /* RandomGifViewController.swift in Sources */,
 				B13F09D823FB27A5001B625B /* RandomGifBuilder.swift in Sources */,
 				6576639223F563A4007A4CBC /* Player.swift in Sources */,
+				B1D4C8B923FC7DF200BB5918 /* GifSearchResultsBuilder.swift in Sources */,
+				B1CE792823FC80630039CB86 /* GifCell.swift in Sources */,
 				656CFB7723F54EE80097A1B5 /* GifPlayerBuilder.swift in Sources */,
 				B1D4C8A723FC7A0100BB5918 /* GifSearchViewController.swift in Sources */,
+				B1D4C8B323FC7D9100BB5918 /* GifSearchResultsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

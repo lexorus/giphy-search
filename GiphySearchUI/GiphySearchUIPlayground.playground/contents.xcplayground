@@ -4,5 +4,6 @@
         <page name='GifPlayerView'/>
         <page name='GifDetailView'/>
         <page name='RandomGifView'/>
+        <page name='GifSearchResults'/>
     </pages>
 </playground>
