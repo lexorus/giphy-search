@@ -1,9 +1,9 @@
 import Foundation
 
 public final class GifSearchBuilder {
-    static func build() -> GifSearchViewController {
+    public static func build(gifDataProvider: @escaping GifDataProvider) -> GifSearchViewController {
         let vc = GifSearchViewController.instantiate()
-        let presenter = GifSearchPresenter(view: vc)
+        let presenter = GifSearchPresenter(view: vc, gifDataProvider: gifDataProvider)
         vc.presenter = presenter
 
         return vc

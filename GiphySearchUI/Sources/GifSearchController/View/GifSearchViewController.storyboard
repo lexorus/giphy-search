@@ -14,9 +14,31 @@
                     <view key="view" contentMode="scaleToFill" id="VHC-9h-Yod">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="c3K-ar-PRR">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="leY-c2-MuT">
+                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="kfC-hr-2j3" firstAttribute="bottom" secondItem="leY-c2-MuT" secondAttribute="bottom" id="IYj-NE-Drh"/>
+                            <constraint firstItem="leY-c2-MuT" firstAttribute="leading" secondItem="kfC-hr-2j3" secondAttribute="leading" id="M91-ra-azn"/>
+                            <constraint firstItem="c3K-ar-PRR" firstAttribute="leading" secondItem="kfC-hr-2j3" secondAttribute="leading" id="fns-h7-2dN"/>
+                            <constraint firstItem="c3K-ar-PRR" firstAttribute="top" secondItem="kfC-hr-2j3" secondAttribute="top" id="lCo-WY-8qT"/>
+                            <constraint firstItem="c3K-ar-PRR" firstAttribute="trailing" secondItem="kfC-hr-2j3" secondAttribute="trailing" id="rzH-ev-nhX"/>
+                            <constraint firstItem="leY-c2-MuT" firstAttribute="top" secondItem="c3K-ar-PRR" secondAttribute="bottom" symbolic="YES" id="tXT-Tq-IfT"/>
+                            <constraint firstItem="kfC-hr-2j3" firstAttribute="trailing" secondItem="leY-c2-MuT" secondAttribute="trailing" id="uIE-Yf-ygo"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="kfC-hr-2j3"/>
                     </view>
+                    <connections>
+                        <outlet property="containerView" destination="leY-c2-MuT" id="VHe-OR-4Xt"/>
+                        <outlet property="searchBar" destination="c3K-ar-PRR" id="KBh-9q-0uj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qVY-Rv-Lxv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

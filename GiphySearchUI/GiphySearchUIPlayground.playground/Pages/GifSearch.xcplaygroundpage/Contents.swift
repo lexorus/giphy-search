@@ -18,8 +18,9 @@ let gifDataProvider: GifDataProvider = { closure in
     callCount += 1
 }
 
-let randomGifViewController = RandomGifBuilder.build(gifDataProvider: gifDataProvider)
+let vc = GifSearchBuilder.build(gifDataProvider: gifDataProvider)
 
-PlaygroundPage.current.liveView = randomGifViewController
+
+PlaygroundPage.current.liveView = vc
 
 PlaygroundPage.current.needsIndefiniteExecution = true
