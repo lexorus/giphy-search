@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-enum GifSearchLoadingState {
+enum GifSearchResultsState {
     enum Stage {
         case initial
     }
@@ -11,7 +11,7 @@ enum GifSearchLoadingState {
 }
 
 protocol GifSearchResultsViewnput: class {
-    func configure(for state: GifSearchLoadingState)
+    func configure(for state: GifSearchResultsState)
 }
 
 final class GifSearchResultsPresenter {

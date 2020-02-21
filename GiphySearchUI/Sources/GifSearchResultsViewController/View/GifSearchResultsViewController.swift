@@ -27,7 +27,7 @@ public final class GifSearchResultsViewController: UIViewController, StoryboardI
 }
 
 extension GifSearchResultsViewController: GifSearchResultsViewnput {
-    func configure(for state: GifSearchLoadingState) {
+    func configure(for state: GifSearchResultsState) {
         DispatchQueue.main.async { [weak self] in
             switch state {
             case .loading(let stage): self?.configureLoadingState(for: stage)
@@ -36,7 +36,7 @@ extension GifSearchResultsViewController: GifSearchResultsViewnput {
         }
     }
 
-    private func configureLoadingState(for stage: GifSearchLoadingState.Stage) {
+    private func configureLoadingState(for stage: GifSearchResultsState.Stage) {
         switch stage {
         case .initial:
             collectionView.isHidden = true
@@ -45,7 +45,7 @@ extension GifSearchResultsViewController: GifSearchResultsViewnput {
         }
     }
 
-    private func configureLoadedState(for stage: GifSearchLoadingState.Stage) {
+    private func configureLoadedState(for stage: GifSearchResultsState.Stage) {
         switch stage {
         case .initial:
             loadingIndicator.isHidden = true

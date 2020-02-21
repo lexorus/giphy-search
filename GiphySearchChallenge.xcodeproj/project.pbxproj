@@ -338,8 +338,8 @@
 		656CFB6723F54C2D0097A1B5 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				B1D4C8AE23FC7D5200BB5918 /* GifSearchResultsViewController */,
 				B1D4C8A223FC796F00BB5918 /* GifSearchController */,
+				B1D4C8AE23FC7D5200BB5918 /* GifSearchResultsViewController */,
 				650F5E1323F5929800AA885E /* RandomGifViewController */,
 				656CFB6C23F54D920097A1B5 /* GifPlayerViewController */,
 				656CFB7223F54DFD0097A1B5 /* Protocols */,

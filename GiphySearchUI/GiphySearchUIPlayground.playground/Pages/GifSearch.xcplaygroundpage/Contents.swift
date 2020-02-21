@@ -3,6 +3,27 @@ import UIKit
 import GiphySearchUI
 import PlaygroundSupport
 
+final class Fetcher: GifSearchResultsFetcher {
+    init() {}
+
+    func searchForGifs(with query: String,
+                       pageSize: UInt,
+                       offset: UInt,
+                       completion: @escaping ([String]) -> Void) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            completion(Array.init(repeating: "", count: Int(pageSize)))
+        }
+    }
+
+    func data(for stringURL: String, completion: @escaping (Data) -> Void) {
+        let randomLoadTime = [0.2, 0.4, 0.6, 1.0].randomElement()!
+        let sampleImageData = UIImage(systemName: "camera.fill")!.pngData()!
+        DispatchQueue.main.asyncAfter(deadline: .now() + randomLoadTime) {
+            completion(sampleImageData)
+        }
+    }
+}
+
 let videoURL1 = URL(string: "https://media3.giphy.com/media/JRlqKEzTDKci5JPcaL/giphy.mp4?cid=e1bb72ffc913ff0cacf52046c2dbe311f3bf986661a800db&rid=giphy.mp4")!
 let gifPlayerData1 = GifPlayerData(gifTitle: "Naruto run", gifURL: "https://gph.is/g/4AQP3vN", gifVideoURL: videoURL1)
 
@@ -18,7 +39,7 @@ let gifDataProvider: GifDataProvider = { closure in
     callCount += 1
 }
 
-let vc = GifSearchBuilder.build(gifDataProvider: gifDataProvider)
+let vc = GifSearchBuilder.build(gifResultsFetcher: Fetcher(), gifDataProvider: gifDataProvider)
 
 
 PlaygroundPage.current.liveView = vc
