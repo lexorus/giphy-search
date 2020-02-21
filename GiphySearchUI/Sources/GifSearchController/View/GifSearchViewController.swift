@@ -22,13 +22,14 @@ public final class GifSearchViewController: UIViewController, StoryboardInstanti
     public override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupsearchBar()
+        setupSearchBar()
+        setupKeyboardDismissal()
         setupRandomGifViewController()
         setupSearchResultsViewController()
         configure(for: .empty)
     }
 
-    private func setupsearchBar() {
+    private func setupSearchBar() {
         searchBar.delegate = self
     }
 
@@ -43,6 +44,19 @@ public final class GifSearchViewController: UIViewController, StoryboardInstanti
                                                                         fetcher: presenter.searchResultsFetcher)
         addChildViewController(searchResultsViewController, into: containerView)
         self.searchResultsViewController = searchResultsViewController
+    }
+
+    private func setupKeyboardDismissal() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        panGesture.cancelsTouchesInView = false
+        panGesture.delegate = self
+        [tapGesture, panGesture].forEach(containerView.addGestureRecognizer)
+    }
+
+    @objc private func dismissKeyboard() {
+        searchBar.resignFirstResponder()
     }
 }
 
@@ -62,5 +76,21 @@ extension GifSearchViewController: GifSearchViewInput {
 extension GifSearchViewController: UISearchBarDelegate {
     public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         presenter.searchTextDidChange(text: searchText)
+    }
+
+    public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        dismissKeyboard()
+    }
+}
+
+extension GifSearchViewController: UIGestureRecognizerDelegate {
+    public func gestureRecognizer(
+        _ gestureRecognizer: UIGestureRecognizer,
+        shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        guard gestureRecognizer is UIPanGestureRecognizer,
+            otherGestureRecognizer is UIPanGestureRecognizer else {
+                return false
+        }
+        return true
     }
 }
