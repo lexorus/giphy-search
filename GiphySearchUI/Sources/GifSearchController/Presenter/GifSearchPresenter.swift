@@ -41,4 +41,9 @@ extension GifSearchPresenter: GifSearchViewOutput {
         let state: GitSearchViewState = text.count > 0 ? .searchResults : .empty
         view?.configure(for: state)
     }
+
+    func cancelSearch() {
+        queryObserver?("")
+        view?.configure(for: .empty)
+    }
 }

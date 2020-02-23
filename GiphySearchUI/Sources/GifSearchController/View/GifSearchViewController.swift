@@ -6,6 +6,7 @@ protocol GifSearchViewOutput {
     var searchResultsFetcher: GifSearchResultsFetcher { get }
     var onGifSelected: (String) -> Void { get }
     func searchTextDidChange(text: String)
+    func cancelSearch()
 }
 
 public final class GifSearchViewController: UIViewController, StoryboardInstantiable {
@@ -82,6 +83,23 @@ extension GifSearchViewController: UISearchBarDelegate {
 
     public func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         dismissKeyboard()
+    }
+
+    public func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+
+    public func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        if searchBar.text?.isEmpty ?? true {
+            searchBar.setShowsCancelButton(false, animated: true)
+        }
+    }
+
+    public func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        presenter.cancelSearch()
+        searchBar.text = ""
+        searchBar.setShowsCancelButton(false, animated: true)
+        searchBar.resignFirstResponder()
     }
 }
 
