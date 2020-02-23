@@ -9,9 +9,11 @@ final class Fetcher: GifSearchResultsFetcher {
     func searchForGifs(with query: String,
                        pageSize: UInt,
                        offset: UInt,
-                       completion: @escaping ([String]) -> Void) {
+                       completion: @escaping ([(id: String, url: String)]) -> Void) {
+        print(query)
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            completion(Array.init(repeating: "", count: Int(pageSize)))
+            let indexedResults = (0..<pageSize).map({ ("\($0)", "") })
+            completion(indexedResults)
         }
     }
 
@@ -33,8 +35,9 @@ var query: String = "" {
 
 let fetcher = Fetcher()
 
-let vc = GifSearchResultsBuilder.build(queryProvider: {  queryObserver = $0},
-                                       fetcher: fetcher)
+let vc = GifSearchResultsBuilder.build(queryProvider: {  queryObserver = $0 },
+                                       fetcher: fetcher,
+                                       onGifSelected: { print($0) })
 
 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
     query = "n"

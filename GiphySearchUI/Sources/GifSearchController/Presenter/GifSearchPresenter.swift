@@ -14,15 +14,18 @@ final class GifSearchPresenter {
     private weak var view: GifSearchViewInput?
     private let gifDataProvider: GifDataProvider
     private let gifResultsFetcher: GifSearchResultsFetcher
+    let onGifSelected: (String) -> Void
 
     private var queryObserver: ((String) -> Void)?
 
     init(view: GifSearchViewInput,
          gifResultsFetcher: GifSearchResultsFetcher,
-         gifDataProvider: @escaping GifDataProvider) {
+         gifDataProvider: @escaping GifDataProvider,
+         onGifSelected: @escaping (String) -> Void) {
         self.view = view
         self.gifResultsFetcher = gifResultsFetcher
         self.gifDataProvider = gifDataProvider
+        self.onGifSelected = onGifSelected
     }
 
     var callCount = 0

@@ -9,9 +9,11 @@ final class Fetcher: GifSearchResultsFetcher {
     func searchForGifs(with query: String,
                        pageSize: UInt,
                        offset: UInt,
-                       completion: @escaping ([String]) -> Void) {
+                       completion: @escaping ([(id: String, url: String)]) -> Void) {
+        print(query)
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            completion(Array.init(repeating: "", count: Int(pageSize)))
+            let indexedResults = (0..<pageSize).map({ ("\($0)", "") })
+            completion(indexedResults)
         }
     }
 
@@ -39,7 +41,9 @@ let gifDataProvider: GifDataProvider = { closure in
     callCount += 1
 }
 
-let vc = GifSearchBuilder.build(gifResultsFetcher: Fetcher(), gifDataProvider: gifDataProvider)
+let vc = GifSearchBuilder.build(gifResultsFetcher: Fetcher(),
+                                gifDataProvider: gifDataProvider,
+                                onGifSelected: { print($0) })
 
 
 PlaygroundPage.current.liveView = vc

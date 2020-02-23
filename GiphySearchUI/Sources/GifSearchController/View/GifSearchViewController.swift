@@ -4,6 +4,7 @@ protocol GifSearchViewOutput {
     var randomGifDataProvider: GifDataProvider { get }
     var searchQueryProvider: GifSearchQueryProvider { get }
     var searchResultsFetcher: GifSearchResultsFetcher { get }
+    var onGifSelected: (String) -> Void { get }
     func searchTextDidChange(text: String)
 }
 
@@ -41,7 +42,8 @@ public final class GifSearchViewController: UIViewController, StoryboardInstanti
 
     private func setupSearchResultsViewController() {
         let searchResultsViewController = GifSearchResultsBuilder.build(queryProvider: presenter.searchQueryProvider,
-                                                                        fetcher: presenter.searchResultsFetcher)
+                                                                        fetcher: presenter.searchResultsFetcher,
+                                                                        onGifSelected: presenter.onGifSelected)
         addChildViewController(searchResultsViewController, into: containerView)
         self.searchResultsViewController = searchResultsViewController
     }

@@ -2,6 +2,7 @@ import UIKit
 
 protocol GifSearchResultsViewOutput {
     var cellModels: [GifCell.Model] { get }
+    func didSelectItem(at indexPath: IndexPath)
 }
 
 public final class GifSearchResultsViewController: UIViewController, StoryboardInstantiable {
@@ -26,7 +27,7 @@ public final class GifSearchResultsViewController: UIViewController, StoryboardI
     }
 }
 
-extension GifSearchResultsViewController: GifSearchResultsViewnput {
+extension GifSearchResultsViewController: GifSearchResultsViewInput {
     func configure(for state: GifSearchResultsState) {
         DispatchQueue.main.async { [weak self] in
             switch state {
@@ -69,6 +70,12 @@ extension GifSearchResultsViewController: UICollectionViewDataSource {
         cell.configure(with: presenter.cellModels[indexPath.row])
 
         return cell
+    }
+}
+
+extension GifSearchResultsViewController: UICollectionViewDelegate {
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter.didSelectItem(at: indexPath)
     }
 }
 
