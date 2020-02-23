@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Gif Details View Controller-->
+        <scene sceneID="GKh-OL-j32">
+            <objects>
+                <viewController storyboardIdentifier="GifDetailsViewController" id="1Fk-UE-NF6" customClass="GifDetailsViewController" customModule="GiphySearchUI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fha-2n-Wan">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FCq-NF-jhY">
+                                <rect key="frame" x="15" y="59" width="384" height="803"/>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Kak-aW-xx2" firstAttribute="bottom" secondItem="FCq-NF-jhY" secondAttribute="bottom" id="5l1-u0-vh6"/>
+                            <constraint firstItem="FCq-NF-jhY" firstAttribute="leading" secondItem="Kak-aW-xx2" secondAttribute="leading" constant="15" id="65w-dv-bgR"/>
+                            <constraint firstItem="Kak-aW-xx2" firstAttribute="trailing" secondItem="FCq-NF-jhY" secondAttribute="trailing" constant="15" id="BLg-5L-lkh"/>
+                            <constraint firstItem="FCq-NF-jhY" firstAttribute="top" secondItem="Kak-aW-xx2" secondAttribute="top" constant="15" id="xJ3-6y-5dj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Kak-aW-xx2"/>
+                    </view>
+                    <connections>
+                        <outlet property="gifPlayerContainer" destination="FCq-NF-jhY" id="mS0-LY-nAW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nhr-Q5-TIa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="138"/>
+        </scene>
+    </scenes>
+</document>
