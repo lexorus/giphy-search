@@ -17,6 +17,16 @@ public final class GifDetailsViewController: UIViewController, StoryboardInstant
 
         presenter?.viewDidLoad()
     }
+
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        showNavigationBar()
+    }
+
+    private func showNavigationBar() {
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
 }
 
 extension GifDetailsViewController: GifDetailsViewInput {

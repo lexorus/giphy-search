@@ -31,6 +31,16 @@ public final class GifSearchViewController: UIViewController, StoryboardInstanti
         configure(for: .empty)
     }
 
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        hideNavigationBar()
+    }
+
+    private func hideNavigationBar() {
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+
     private func setupSearchBar() {
         searchBar.delegate = self
     }
