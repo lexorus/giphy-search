@@ -25,6 +25,20 @@ public struct Gif: Decodable & Equatable {
         case url
         case mp4
     }
+
+    public init(id: String, title: String, bitlyURL: String,
+                rating: String, stillImageURL: String,
+                fixedWidthVideoURL: String, originalGIFURL: String,
+                originalVideoURL: String) {
+        self.id = id
+        self.title = title
+        self.bitlyURL = bitlyURL
+        self.rating = rating
+        self.stillImageURL = stillImageURL
+        self.fixedWidthVideoURL = fixedWidthVideoURL
+        self.originalGIFURL = originalGIFURL
+        self.originalVideoURL = originalVideoURL
+    }
 }
 
 public extension Gif {
