@@ -7,11 +7,11 @@ final public class GiphyAPI: GifAPI {
     private let requestFactory: GiphyRequestFactory
 
     public convenience init(apiKey: String) {
-        self.init(apikey: apiKey, network: URLSession.shared)
+        self.init(apiKey: apiKey, network: URLSession.shared)
     }
 
-    init(apikey: String, network: Network) {
-        self.requestFactory = GiphyRequestFactory(apiKey: apikey)
+    init(apiKey: String, network: Network) {
+        self.requestFactory = GiphyRequestFactory(apiKey: apiKey)
         self.network = network
     }
 
@@ -42,6 +42,17 @@ final public class GiphyAPI: GifAPI {
     public func getStillImageData(for gif: Gif,
                                   completion: @escaping NetworkCompletion<Data>) -> NetworkTask? {
         guard let url = URL(string: gif.stillImageURL) else {
+            completion(.failure(.failedToBuildURL))
+            return nil
+        }
+        let urlRequest = URLRequest(url: url)
+
+        return getData(from: urlRequest, completion: completion)
+    }
+
+    @discardableResult
+    public func getData(for stringURL: String, completion: @escaping NetworkCompletion<Data>) -> NetworkTask? {
+        guard let url = URL(string: stringURL) else {
             completion(.failure(.failedToBuildURL))
             return nil
         }

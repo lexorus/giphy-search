@@ -10,7 +10,7 @@ final class GiphyAPITests: XCTestCase {
         super.setUp()
 
         mockNetwork = MockNetwork()
-        giphyAPI = GiphyAPI(apikey: apiKey, network: mockNetwork)
+        giphyAPI = GiphyAPI(apiKey: apiKey, network: mockNetwork)
     }
 
     override func tearDown() {
