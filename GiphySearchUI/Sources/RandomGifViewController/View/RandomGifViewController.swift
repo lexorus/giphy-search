@@ -29,6 +29,8 @@ public final class RandomGifViewController: UIViewController, StoryboardInstanti
 
 extension RandomGifViewController: RandomGifViewInput {
     func playGif(with data: GifPlayerData) {
-        gifPlayerViewController?.playGif(with: data)
+        onMain {
+            self.gifPlayerViewController?.playGif(with: data)
+        }
     }
 }

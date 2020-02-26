@@ -31,12 +31,16 @@ public final class GifDetailsViewController: UIViewController, StoryboardInstant
 
 extension GifDetailsViewController: GifDetailsViewInput {
     func configure(for gifData: GifPlayerData) {
-        title = gifData.gifTitle
-        setupGifPlayerView(with: gifData)
+        onMain {
+            self.title = gifData.gifTitle
+            self.setupGifPlayerView(with: gifData)
+        }
     }
 
     private func setupGifPlayerView(with data: GifPlayerData) {
-        let gifPlayerViewController = GifPlayerBuilder.build(with: data)
-        addChildViewController(gifPlayerViewController, into: gifPlayerContainer)
+        onMain {
+            let gifPlayerViewController = GifPlayerBuilder.build(with: data)
+            self.addChildViewController(gifPlayerViewController, into: self.gifPlayerContainer)
+        }
     }
 }

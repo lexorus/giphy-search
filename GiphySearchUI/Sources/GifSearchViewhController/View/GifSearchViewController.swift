@@ -75,14 +75,24 @@ public final class GifSearchViewController: UIViewController, StoryboardInstanti
 
 extension GifSearchViewController: GifSearchViewInput {
     func configure(for state: GitSearchViewState) {
-        switch state {
-        case .empty:
-            randomGifViewController?.view.isHidden = false
-            searchResultsViewController?.view.isHidden = true
-        case .searchResults:
-            randomGifViewController?.view.isHidden = true
-            searchResultsViewController?.view.isHidden = false
+        onMain {
+            switch state {
+            case .empty:
+                self.configureForEmptyState()
+            case .searchResults:
+                self.configureForSearchResultsState()
+            }
         }
+    }
+
+    private func configureForEmptyState() {
+        randomGifViewController?.view.isHidden = false
+        searchResultsViewController?.view.isHidden = true
+    }
+
+    private func configureForSearchResultsState() {
+        randomGifViewController?.view.isHidden = true
+        searchResultsViewController?.view.isHidden = false
     }
 }
 

@@ -40,8 +40,10 @@ public final class GifPlayerViewController: UIViewController, StoryboardInstanti
 
 extension GifPlayerViewController: GifPlayerViewInput {
     func set(gifTitle: String, gifURL: String, player: Player) {
-        self.gifTitle.text = gifTitle
-        self.gifURL.text = gifURL
-        self.videoPlayerController.player = player as? AVPlayer
+        onMain {
+            self.gifTitle.text = gifTitle
+            self.gifURL.text = gifURL
+            self.videoPlayerController.player = player as? AVPlayer
+        }
     }
 }

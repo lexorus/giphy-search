@@ -29,7 +29,7 @@ public final class GifSearchResultsViewController: UIViewController, StoryboardI
 
 extension GifSearchResultsViewController: GifSearchResultsViewInput {
     func configure(for state: GifSearchResultsState) {
-        DispatchQueue.main.async { [weak self] in
+        onMain { [weak self] in
             switch state {
             case .loading(let stage): self?.configureLoadingState(for: stage)
             case .loaded(let stage): self?.configureLoadedState(for: stage)

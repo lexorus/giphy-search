@@ -1,6 +1,6 @@
 import Foundation
 
-public typealias GifDataProvider = ((GifPlayerData) -> Void) -> Void
+public typealias GifDataProvider = ( @escaping (GifPlayerData) -> Void) -> Void
 
 public final class RandomGifBuilder {
     public static func build(gifDataProvider: @escaping GifDataProvider) -> RandomGifViewController {

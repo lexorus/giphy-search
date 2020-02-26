@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		650BA9B9240693B600A56ECE /* ExecuteOnMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 650BA9B8240693B600A56ECE /* ExecuteOnMain.swift */; };
 		6562FD1123F0A6B700E2CEAD /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6562FD1023F0A6B700E2CEAD /* IntExtensions.swift */; };
 		6562FD1323F0A6D400E2CEAD /* URLExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6562FD1223F0A6D400E2CEAD /* URLExtensions.swift */; };
 		6562FD1523F0A6EB00E2CEAD /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6562FD1423F0A6EB00E2CEAD /* StringExtensions.swift */; };
@@ -142,6 +143,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		650BA9B8240693B600A56ECE /* ExecuteOnMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecuteOnMain.swift; sourceTree = "<group>"; };
 		6562FD1023F0A6B700E2CEAD /* IntExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExtensions.swift; sourceTree = "<group>"; };
 		6562FD1223F0A6D400E2CEAD /* URLExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLExtensions.swift; sourceTree = "<group>"; };
 		6562FD1423F0A6EB00E2CEAD /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
@@ -267,6 +269,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		650BA9B72406939800A56ECE /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				650BA9B8240693B600A56ECE /* ExecuteOnMain.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		650F5E1323F5929800AA885E /* RandomGifViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -353,6 +363,7 @@
 				656CFB6C23F54D920097A1B5 /* GifPlayerViewController */,
 				656CFB7223F54DFD0097A1B5 /* Protocols */,
 				B1D4C88F23FB300000BB5918 /* Extensions */,
+				650BA9B72406939800A56ECE /* Utilities */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -1018,6 +1029,7 @@
 				B1B81353240323C3003226D4 /* GifDetailsBuilder.swift in Sources */,
 				6576639223F563A4007A4CBC /* Player.swift in Sources */,
 				B1D4C8B923FC7DF200BB5918 /* GifSearchResultsBuilder.swift in Sources */,
+				650BA9B9240693B600A56ECE /* ExecuteOnMain.swift in Sources */,
 				B1CE792823FC80630039CB86 /* GifCell.swift in Sources */,
 				656CFB7723F54EE80097A1B5 /* GifPlayerBuilder.swift in Sources */,
 				B1D4C8A723FC7A0100BB5918 /* GifSearchViewController.swift in Sources */,
