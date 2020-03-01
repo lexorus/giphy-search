@@ -3,6 +3,7 @@ import AVFoundation
 protocol Player {
     static func with(url: URL) -> Player
     func play()
+    func pause()
     func seek(to: CMTime)
 }
 

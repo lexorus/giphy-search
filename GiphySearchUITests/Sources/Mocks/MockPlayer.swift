@@ -18,6 +18,11 @@ final class MockPlayer: Player {
         playCalled = true
     }
 
+    var pauseCalled = false
+    func pause() {
+        pauseCalled = true
+    }
+
     var seekArgs: (CMTime)?
     func seek(to time: CMTime) {
         seekArgs = (time)

@@ -3,6 +3,8 @@ import AVKit
 
 protocol GifPlayerViewOutput {
     func viewDidLoad()
+    func viewWillAppear()
+    func viewWillDisappear()
     func playGif(with data: GifPlayerData)
 }
 
@@ -25,6 +27,18 @@ public final class GifPlayerViewController: UIViewController, StoryboardInstanti
         super.viewDidLoad()
 
         presenter?.viewDidLoad()
+    }
+
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        presenter?.viewWillAppear()
+    }
+
+    public override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        presenter?.viewWillDisappear()
     }
 
     func playGif(with data: GifPlayerData) {
