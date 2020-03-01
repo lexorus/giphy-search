@@ -1,7 +1,12 @@
 import Foundation
 
+enum RandomGifViewState {
+    case play(GifPlayerData)
+    case error(message: String, onRetry: () -> Void)
+}
+
 protocol RandomGifViewInput: class {
-    func playGif(with data: GifPlayerData)
+    func configure(for state: RandomGifViewState)
 }
 
 final class RandomGifPresenter {
@@ -28,8 +33,15 @@ final class RandomGifPresenter {
     }
 
     private func playNewGif() {
-        gifDataProvider { [weak self] data in
-            self?.view?.playGif(with: data)
+        gifDataProvider { [weak self] result in
+            switch result {
+            case .success(let response):
+                self?.view?.configure(for: .play(response))
+            case .failure(let error):
+                let onRetry: () -> Void = { [weak self] in self?.playNewGif() }
+                self?.view?.configure(for: .error(message: error,
+                                                  onRetry: onRetry))
+            }
         }
     }
 }

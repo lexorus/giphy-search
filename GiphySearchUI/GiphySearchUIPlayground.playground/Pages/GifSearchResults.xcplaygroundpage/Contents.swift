@@ -9,19 +9,20 @@ final class Fetcher: GifSearchResultsFetcher {
     func searchForGifs(with query: String,
                        pageSize: UInt,
                        offset: UInt,
-                       completion: @escaping ([(id: String, url: String)]) -> Void) {
+                       completion: @escaping (Result<[(id: String, url: String)], FetchingError>) -> Void) {
         print(query)
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             let indexedResults = (0..<pageSize).map({ ("\($0)", "") })
-            completion(indexedResults)
+            completion(.success(indexedResults))
+//            completion(.failure("Failed to fetch"))
         }
     }
 
-    func data(for stringURL: String, completion: @escaping (Data) -> Void) {
+    func data(for stringURL: String, completion: @escaping (Result<Data, FetchingError>) -> Void) {
         let randomLoadTime = [0.2, 0.4, 0.6, 1.0].randomElement()!
         let sampleImageData = UIImage(systemName: "camera.fill")!.pngData()!
         DispatchQueue.main.asyncAfter(deadline: .now() + randomLoadTime) {
-            completion(sampleImageData)
+            completion(.success(sampleImageData))
         }
     }
 }

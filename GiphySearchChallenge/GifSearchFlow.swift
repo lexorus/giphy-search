@@ -6,7 +6,8 @@ final class GifSearchFlow {
     private let navigationController = UINavigationController()
     private let gifRepository: GifRepository
 
-    init(gifRepository: GifRepository = GiphyRepository(gifAPI: GiphyAPI(apiKey: "your_giphy_api_token"))) { // OfflineFakeGifRepository()
+    init(gifRepository: GifRepository = OfflineFakeGifRepository()) {
+//        GiphyRepository(gifAPI: GiphyAPI(apiKey: "your_giphy_api_token"))) {
         self.gifRepository = gifRepository
     }
 
@@ -15,7 +16,7 @@ final class GifSearchFlow {
         let gifDataProvider: GifDataProvider = { [weak self] completion in
             self?.gifRepository.getRandomGif { gif in
                 guard let gifVideoURL = URL(string: gif.originalVideoURL) else { return }
-                completion(.init(gifTitle: gif.title, gifURL: gif.bitlyURL, gifVideoURL: gifVideoURL))
+                completion(.success(.init(gifTitle: gif.title, gifURL: gif.bitlyURL, gifVideoURL: gifVideoURL)))
             }
         }
 

@@ -31,8 +31,12 @@ extension GifSearchResultsViewController: GifSearchResultsViewInput {
     func configure(for state: GifSearchResultsState) {
         onMain { [weak self] in
             switch state {
-            case .loading(let stage): self?.configureLoadingState(for: stage)
-            case .loaded(let stage): self?.configureLoadedState(for: stage)
+            case .loading(let stage):
+                self?.configureLoadingState(for: stage)
+            case .loaded(let stage):
+                self?.configureLoadedState(for: stage)
+            case .error(let stage, let message, let onRetry):
+                self?.configureErrorState(for: stage, message: message, onRetry: onRetry)
             }
         }
     }
@@ -49,13 +53,27 @@ extension GifSearchResultsViewController: GifSearchResultsViewInput {
     private func configureLoadedState(for stage: GifSearchResultsState.Stage) {
         switch stage {
         case .initial:
-            loadingIndicator.isHidden = true
-            loadingIndicator.stopAnimating()
-            collectionView.isHidden = false
+            stopInitialLoading()
             collectionView.reloadData()
             collectionView.scrollToItem(at: .init(row: 0, section: 0),
                                         at: .top, animated: false)
         }
+    }
+
+    private func configureErrorState(for stage: GifSearchResultsState.Stage,
+                                     message: String,
+                                     onRetry: @escaping () -> Void) {
+        switch stage {
+        case .initial:
+            stopInitialLoading()
+            presentErrorAlert(with: message, onRetry: onRetry)
+        }
+    }
+
+    private func stopInitialLoading() {
+        loadingIndicator.isHidden = true
+        loadingIndicator.stopAnimating()
+        collectionView.isHidden = false
     }
 }
 

@@ -14,8 +14,9 @@ let gifDataProvider: GifDataProvider = { closure in
     let data = callCount % 2 == 0 ?
         gifPlayerData1 :
         gifPlayerData2
-    closure(data)
+    closure(.success(data))
     callCount += 1
+//    closure(.failure("Failed to fetch"))
 }
 
 let randomGifViewController = RandomGifBuilder.build(gifDataProvider: gifDataProvider)

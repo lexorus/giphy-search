@@ -31,32 +31,32 @@ extension GiphyRepository: GifSearchResultsFetcher {
     func searchForGifs(with query: String,
                        pageSize: UInt,
                        offset: UInt,
-                       completion: @escaping ([(id: String, url: String)]) -> Void) {
+                       completion: @escaping (Result<[(id: String, url: String)], FetchingError>) -> Void) {
         gifAPI.searchForGifs(with: query,
                                pageSize: pageSize,
                                offset: offset) { [weak self] (result) in
                                 switch result {
                                 case .success(let gifs):
                                     gifs.forEach { self?.gifsCache[$0.id] = $0 }
-                                    completion(gifs.map({ ($0.id, $0.stillImageURL) }))
+                                    completion(.success(gifs.map({ ($0.id, $0.stillImageURL) })))
                                 case .failure(let error):
-                                    print("Search request failed with error: \(error)")
+                                    completion(.failure(error.description))
                                 }
         }
     }
 
-    func data(for stringURL: String, completion: @escaping (Data) -> Void) {
+    func data(for stringURL: String, completion: @escaping (Result<Data, FetchingError>) -> Void) {
         if let cachedData = dataCache.object(forKey: stringURL as NSString) {
-            completion(cachedData as Data)
+            completion(.success(cachedData as Data))
             return
         }
         gifAPI.getData(for: stringURL) { [weak self] result in
             switch result {
             case .success(let data):
                 self?.dataCache.setObject(data as NSData, forKey: stringURL as NSString)
-                completion(data)
+                completion(.success(data))
             case .failure(let error):
-                print("Get data request failed with error: \(error)")
+                completion(.failure(error.description))
             }
         }
     }

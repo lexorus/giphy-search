@@ -8,6 +8,7 @@ enum GifSearchResultsState {
 
     case loading(Stage)
     case loaded(Stage)
+    case error(Stage, message: String, onRetry: () -> Void)
 }
 
 protocol GifSearchResultsViewInput: class {
@@ -34,20 +35,33 @@ final class GifSearchResultsPresenter {
 
     private func queryDidChange(to query: String) {
         view?.configure(for: .loading(.initial))
-        fetcher.searchForGifs(with: query, pageSize: 24, offset: 0) { [weak self] response in
+        fetcher.searchForGifs(with: query, pageSize: 24, offset: 0) { [weak self] result in
             guard let welf = self else { return }
-            welf.presentedGifIds = response.map({ $0.id })
-            welf.cellModels = welf.generateCellModels(for: response.map({ $0.url }))
-            welf.view?.configure(for: .loaded(.initial))
+            switch result {
+            case .success(let response):
+                welf.presentedGifIds = response.map({ $0.id })
+                welf.cellModels = welf.generateCellModels(for: response.map({ $0.url }))
+                welf.view?.configure(for: .loaded(.initial))
+            case .failure(let error):
+                let onRetry: () -> Void = { [weak self] in
+                    self?.queryDidChange(to: query)
+                }
+                welf.view?.configure(for: .error(.initial, message: error, onRetry: onRetry))
+            }
         }
     }
 
     private func generateCellModels(for stringURLs: [String]) -> [GifCell.Model] {
         stringURLs.map { stringURL in
             GifCell.Model { [weak self] closure in
-                self?.fetcher.data(for: stringURL) { data in
-                    guard let image = UIImage(data: data) else { return }
-                    closure(image)
+                self?.fetcher.data(for: stringURL) { result in
+                    switch result {
+                    case .success(let response):
+                        guard let image = UIImage(data: response) else { return }
+                        closure(image)
+                    case .failure(let error):
+                        debugPrint("Error loading image: \(error)")
+                    }
                 }
             }
         }
