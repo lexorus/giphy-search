@@ -31,31 +31,35 @@ final class OfflineFakeGifRepository {
 }
 
 extension OfflineFakeGifRepository: GifRepository {
-    var randomGif: Gif! {  sampleGif1 }//[sampleGif1, sampleGif2].randomElement() }
+    private var randomGif: Gif! { [sampleGif1, sampleGif2].randomElement() }
     convenience init(gifAPI: GifAPI) { self.init() }
     func getGif(for id: String) -> Gif? { cachedGifs[id] }
 
-    func getRandomGif(completion: @escaping (Gif) -> Void) {
-        guard let gif = [sampleGif1, sampleGif2].randomElement() else { return }
+    func getRandomGif(completion: @escaping (Gif) -> Void) -> Cancellable? {
+        guard let gif = [sampleGif1, sampleGif2].randomElement() else { return nil }
         completion(gif)
+        return nil
     }
 
     func searchForGifs(with query: String,
                        pageSize: UInt,
                        offset: UInt,
-                       completion: @escaping (Result<[(id: String, url: String)], FetchingError>) -> Void) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            let randomGifId = self.randomGif.id
-            let indexedResults = (0..<pageSize).map { _ in ("\(randomGifId)", "") }
-            completion(.success(indexedResults))
-        }
+                       completion: @escaping (Result<[(id: String, url: String)], FetchingError>) -> Void)
+        -> Cancellable? {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                let randomGifId = self.randomGif.id
+                let indexedResults = (0..<pageSize).map { _ in ("\(randomGifId)", "") }
+                completion(.success(indexedResults))
+            }
+            return nil
     }
 
-    func data(for stringURL: String, completion: @escaping (Result<Data, FetchingError>) -> Void) {
+    func data(for stringURL: String, completion: @escaping (Result<Data, FetchingError>) -> Void) -> Cancellable? {
         let randomLoadTime = [0.2, 0.4, 0.6, 1.0].randomElement()!
         let sampleImageData = UIImage(systemName: "camera.fill")!.pngData()!
         DispatchQueue.main.asyncAfter(deadline: .now() + randomLoadTime) {
             completion(.success(sampleImageData))
         }
+        return nil
     }
 }

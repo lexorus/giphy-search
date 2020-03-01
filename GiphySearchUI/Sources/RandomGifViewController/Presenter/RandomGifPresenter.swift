@@ -12,6 +12,7 @@ protocol RandomGifViewInput: class {
 final class RandomGifPresenter {
     private weak var view: RandomGifViewInput?
     private let gifDataProvider: GifDataProvider
+    private var gifDataRequestCancellable: Cancellable?
     private let schedulerType: Scheduler.Type
     private var timer: Scheduler?
 
@@ -33,7 +34,9 @@ final class RandomGifPresenter {
     }
 
     private func playNewGif() {
-        gifDataProvider { [weak self] result in
+        gifDataRequestCancellable?.cancel()
+        gifDataRequestCancellable = gifDataProvider { [weak self] result in
+            self?.gifDataRequestCancellable = nil
             switch result {
             case .success(let response):
                 self?.view?.configure(for: .play(response))

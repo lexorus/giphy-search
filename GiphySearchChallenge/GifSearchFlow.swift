@@ -6,8 +6,8 @@ final class GifSearchFlow {
     private let navigationController = UINavigationController()
     private let gifRepository: GifRepository
 
-    init(gifRepository: GifRepository = OfflineFakeGifRepository()) {
-//        GiphyRepository(gifAPI: GiphyAPI(apiKey: "your_giphy_api_token"))) {
+    init(gifRepository: GifRepository =// OfflineFakeGifRepository()) {
+        GiphyRepository(gifAPI: GiphyAPI(apiKey: "your_giphy_api_token"))) {
         self.gifRepository = gifRepository
     }
 

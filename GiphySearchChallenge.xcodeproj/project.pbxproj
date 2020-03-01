@@ -63,6 +63,8 @@
 		B1B81353240323C3003226D4 /* GifDetailsBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B81352240323C3003226D4 /* GifDetailsBuilder.swift */; };
 		B1B81355240323CE003226D4 /* GifDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B81354240323CE003226D4 /* GifDetailsPresenter.swift */; };
 		B1CD44A9240BCF4200B14687 /* NetworkErrorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CD44A8240BCF4200B14687 /* NetworkErrorExtensions.swift */; };
+		B1CD44AB240BDFD900B14687 /* Cancellable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CD44AA240BDFD900B14687 /* Cancellable.swift */; };
+		B1CD44AE240C681B00B14687 /* CancellableTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CD44AD240C681B00B14687 /* CancellableTask.swift */; };
 		B1CE792823FC80630039CB86 /* GifCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CE792623FC80630039CB86 /* GifCell.swift */; };
 		B1CE792923FC80630039CB86 /* GifCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1CE792723FC80630039CB86 /* GifCell.xib */; };
 		B1CE792B23FC80FA0039CB86 /* IdentifiableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CE792A23FC80FA0039CB86 /* IdentifiableType.swift */; };
@@ -216,6 +218,8 @@
 		B1B81352240323C3003226D4 /* GifDetailsBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifDetailsBuilder.swift; sourceTree = "<group>"; };
 		B1B81354240323CE003226D4 /* GifDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifDetailsPresenter.swift; sourceTree = "<group>"; };
 		B1CD44A8240BCF4200B14687 /* NetworkErrorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorExtensions.swift; sourceTree = "<group>"; };
+		B1CD44AA240BDFD900B14687 /* Cancellable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cancellable.swift; sourceTree = "<group>"; };
+		B1CD44AD240C681B00B14687 /* CancellableTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancellableTask.swift; sourceTree = "<group>"; };
 		B1CE792623FC80630039CB86 /* GifCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifCell.swift; sourceTree = "<group>"; };
 		B1CE792723FC80630039CB86 /* GifCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GifCell.xib; sourceTree = "<group>"; };
 		B1CE792A23FC80FA0039CB86 /* IdentifiableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiableType.swift; sourceTree = "<group>"; };
@@ -441,6 +445,7 @@
 				B1D4C89223FB41C500BB5918 /* Scheduler.swift */,
 				B1CE792A23FC80FA0039CB86 /* IdentifiableType.swift */,
 				B18E7D33240AF22B00505960 /* GifSearchResultsFetcher.swift */,
+				B1CD44AA240BDFD900B14687 /* Cancellable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -528,6 +533,7 @@
 				B14D45782406FE0C004F6673 /* GifSearchFlow.swift */,
 				B14D457E2407012A004F6673 /* GifRepository */,
 				B14D457B2406FFCF004F6673 /* Extensions */,
+				B1CD44AC240C681000B14687 /* Models */,
 				B14D45752406FD0B004F6673 /* SupportingFiles */,
 			);
 			path = GiphySearchChallenge;
@@ -706,6 +712,14 @@
 				B1B81352240323C3003226D4 /* GifDetailsBuilder.swift */,
 			);
 			path = Builder;
+			sourceTree = "<group>";
+		};
+		B1CD44AC240C681000B14687 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B1CD44AD240C681B00B14687 /* CancellableTask.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		B1CE792523FC80000039CB86 /* Cells */ = {
@@ -1076,6 +1090,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1CD44AB240BDFD900B14687 /* Cancellable.swift in Sources */,
 				B1CE792D23FC81A70039CB86 /* UICollectionViewExtensions.swift in Sources */,
 				B1CE792B23FC80FA0039CB86 /* IdentifiableType.swift in Sources */,
 				B1D4C8B723FC7DE700BB5918 /* GifSearchResultsPresenter.swift in Sources */,
@@ -1125,6 +1140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1CD44A9240BCF4200B14687 /* NetworkErrorExtensions.swift in Sources */,
+				B1CD44AE240C681B00B14687 /* CancellableTask.swift in Sources */,
 				B14D458024070131004F6673 /* GifRepository.swift in Sources */,
 				B14D457A2406FE0C004F6673 /* GifSearchFlow.swift in Sources */,
 				B14D457D2406FFEA004F6673 /* GifPlayerDataExtensions.swift in Sources */,

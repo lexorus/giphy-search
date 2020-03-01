@@ -18,6 +18,7 @@ protocol GifSearchResultsViewInput: class {
 final class GifSearchResultsPresenter {
     private weak var view: GifSearchResultsViewInput?
     private let fetcher: GifSearchResultsFetcher
+    private var gifSearchRequestCancellable: Cancellable?
     private let onGifSelected: (String) -> Void
 
     var presentedGifIds = [String]()
@@ -34,9 +35,13 @@ final class GifSearchResultsPresenter {
     }
 
     private func queryDidChange(to query: String) {
+        gifSearchRequestCancellable?.cancel()
         view?.configure(for: .loading(.initial))
-        fetcher.searchForGifs(with: query, pageSize: 24, offset: 0) { [weak self] result in
+        gifSearchRequestCancellable = fetcher.searchForGifs(with: query,
+                                                            pageSize: 24,
+                                                            offset: 0) { [weak self] result in
             guard let welf = self else { return }
+            welf.gifSearchRequestCancellable = nil
             switch result {
             case .success(let response):
                 welf.presentedGifIds = response.map({ $0.id })
