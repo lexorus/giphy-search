@@ -35,9 +35,9 @@ extension OfflineFakeGifRepository: GifRepository {
     convenience init(gifAPI: GifAPI) { self.init() }
     func getGif(for id: String) -> Gif? { cachedGifs[id] }
 
-    func getRandomGif(completion: @escaping (Gif) -> Void) -> Cancellable? {
+    func getRandomGif(completion: @escaping (Result<Gif, FetchingError>) -> Void) -> Cancellable? {
         guard let gif = [sampleGif1, sampleGif2].randomElement() else { return nil }
-        completion(gif)
+        completion(.success(gif))
         return nil
     }
 

@@ -2,7 +2,8 @@ import Foundation
 import GifAPI
 import GiphySearchUI
 
-final class GiphyRepository: GifRepository {private let gifAPI: GifAPI
+final class GiphyRepository: GifRepository {
+    private let gifAPI: GifAPI
     private var gifsCache: [String: Gif] = [:]
     private var dataCache: NSCache<NSString, NSData> = .init()
 
@@ -10,13 +11,13 @@ final class GiphyRepository: GifRepository {private let gifAPI: GifAPI
         self.gifAPI = gifAPI
     }
 
-    func getRandomGif(completion: @escaping (Gif) -> Void) -> Cancellable? {
+    func getRandomGif(completion: @escaping (Result<Gif, FetchingError>) -> Void) -> Cancellable? {
         return gifAPI.getRandomGIF { result in
             switch result {
             case .success(let gif):
-                completion(gif)
+                completion(.success(gif))
             case .failure(let error):
-                print("Get random gif failed with error: \(error)")
+                completion(.failure(error.description))
             }
         }?.toCancellableTask()
     }

@@ -14,9 +14,16 @@ final class GifSearchFlow {
     func buildSearchViewController(completion: @escaping (String) -> Void) -> GifSearchViewController {
         let fetcher: GifSearchResultsFetcher = gifRepository
         let gifDataProvider: GifDataProvider = { [weak self] completion in
-            self?.gifRepository.getRandomGif { gif in
-                guard let gifVideoURL = URL(string: gif.originalVideoURL) else { return }
-                completion(.success(.init(gifTitle: gif.title, gifURL: gif.bitlyURL, gifVideoURL: gifVideoURL)))
+            self?.gifRepository.getRandomGif { result in
+                switch result {
+                case .success(let gif):
+                    guard let gifVideoURL = URL(string: gif.originalVideoURL) else {
+                        return completion(.failure("Invalid video URL"))
+                    }
+                    completion(.success(.init(gifTitle: gif.title, gifURL: gif.bitlyURL, gifVideoURL: gifVideoURL)))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
             }
         }
 
