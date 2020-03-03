@@ -2,10 +2,10 @@ import Foundation
 
 public final class RandomGifBuilder {
     public static func build(gifDataProvider: @escaping GifDataProvider) -> RandomGifViewController {
-        let vc = RandomGifViewController.instantiate()
-        let presenter = RandomGifPresenter(view: vc, gifDataProvider: gifDataProvider)
-        vc.presenter = presenter
+        let viewController = RandomGifViewController.instantiate()
+        let presenter = RandomGifPresenter(view: viewController, gifDataProvider: gifDataProvider)
+        viewController.presenter = presenter
 
-        return vc
+        return viewController
     }
 }

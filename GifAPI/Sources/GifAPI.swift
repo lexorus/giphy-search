@@ -10,7 +10,7 @@ public protocol GifAPI {
     func searchForGifs(with query: String,
                        pageSize: UInt,
                        offset: UInt,
-                       completion: @escaping NetworkCompletion<[Gif]>)  -> NetworkTask?
+                       completion: @escaping NetworkCompletion<[Gif]>) -> NetworkTask?
     @discardableResult
     func getData(for stringURL: String, completion: @escaping NetworkCompletion<Data>) -> NetworkTask?
 }

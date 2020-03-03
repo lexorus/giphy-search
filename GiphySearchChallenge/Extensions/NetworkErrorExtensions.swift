@@ -9,7 +9,7 @@ extension NetworkError: CustomStringConvertible {
             return "API Error: \(message)"
         case .noDataError:
             return "Empty data received from server."
-        case .decodingError(_):
+        case .decodingError:
             return "Failed to decode received data."
         case .failedToBuildURL, .unknown, .apiError:
             return "Failed to connect to the server."

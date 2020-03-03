@@ -7,10 +7,10 @@ let videoURL = URL(string: "https://media3.giphy.com/media/JRlqKEzTDKci5JPcaL/gi
 let gifPlayerData = GifPlayerData(gifTitle: "Naruto run", gifURL: "https://gph.is/g/4AQP3vN", gifVideoURL: videoURL)
 let gifPlayerVC = GifDetailsBuilder.build(gifData: gifPlayerData)
 
-let nv = UINavigationController(rootViewController: UIViewController())
-nv.pushViewController(gifPlayerVC, animated: true)
+let navigationController = UINavigationController(rootViewController: UIViewController())
+navigationController.pushViewController(gifPlayerVC, animated: true)
 gifPlayerVC.title = gifPlayerData.gifTitle
 
-PlaygroundPage.current.liveView = nv
+PlaygroundPage.current.liveView = navigationController
 
 PlaygroundPage.current.needsIndefiniteExecution = true

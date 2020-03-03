@@ -28,7 +28,7 @@ final public class GiphyAPI: GifAPI {
     public func searchForGifs(with query: String,
                               pageSize: UInt,
                               offset: UInt,
-                              completion: @escaping NetworkCompletion<[Gif]>)  -> NetworkTask? {
+                              completion: @escaping NetworkCompletion<[Gif]>) -> NetworkTask? {
         guard let urlRequest = requestFactory.searchForGifsURLRequest(query: query,
                                                                       limit: pageSize,
                                                                       offset: offset) else {

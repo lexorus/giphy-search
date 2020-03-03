@@ -1,0 +1,10 @@
+line_length:
+  ignores_urls: true
+
+identifier_name:
+  excluded:
+    - id
+
+nesting:
+  type_level:
+    warning: 2

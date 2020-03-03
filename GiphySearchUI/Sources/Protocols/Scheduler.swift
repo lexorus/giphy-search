@@ -8,8 +8,9 @@ protocol Scheduler {
     func invalidate()
 }
 
-extension Timer: Scheduler{
-    static func with(timeInterval: TimeInterval, shouldRepeat: Bool, action: @escaping (Scheduler) -> Void) -> Scheduler {
+extension Timer: Scheduler {
+    static func with(timeInterval: TimeInterval,
+                     shouldRepeat: Bool, action: @escaping (Scheduler) -> Void) -> Scheduler {
         return Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: shouldRepeat, block: action)
     }
 }

@@ -16,7 +16,9 @@ final class RandomGifPresenter {
     private let schedulerType: Scheduler.Type
     private var timer: Scheduler?
 
-    init(view: RandomGifViewInput, gifDataProvider: @escaping GifDataProvider, schedulerType: Scheduler.Type = Timer.self) {
+    init(view: RandomGifViewInput,
+         gifDataProvider: @escaping GifDataProvider,
+         schedulerType: Scheduler.Type = Timer.self) {
         self.view = view
         self.gifDataProvider = gifDataProvider
         self.schedulerType = schedulerType

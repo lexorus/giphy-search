@@ -22,7 +22,8 @@ final class MockGifAPI: GifAPI {
 
     var searchForGifsStub: NetworkTask = MockNetworkTask()
     var searchForGifsFuncCheck = FuncCheck<(String, UInt, UInt, NetworkCompletion<[Gif]>)>()
-    func searchForGifs(with query: String, pageSize: UInt, offset: UInt, completion: @escaping NetworkCompletion<[Gif]>) -> NetworkTask? {
+    func searchForGifs(with query: String, pageSize: UInt,
+                       offset: UInt, completion: @escaping NetworkCompletion<[Gif]>) -> NetworkTask? {
         searchForGifsFuncCheck.call((query, pageSize, offset, completion))
         return searchForGifsStub
     }
@@ -33,6 +34,4 @@ final class MockGifAPI: GifAPI {
         getDataFuncCheck.call((stringURL, completion))
         return getDataStub
     }
-
-
 }

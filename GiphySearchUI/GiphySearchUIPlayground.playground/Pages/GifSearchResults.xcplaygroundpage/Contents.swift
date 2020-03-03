@@ -36,9 +36,9 @@ var query: String = "" {
 
 let fetcher = Fetcher()
 
-let vc = GifSearchResultsBuilder.build(queryProvider: {  queryObserver = $0 },
-                                       fetcher: fetcher,
-                                       onGifSelected: { print($0) })
+let viewController = GifSearchResultsBuilder.build(queryProvider: {  queryObserver = $0 },
+                                                   fetcher: fetcher,
+                                                   onGifSelected: { print($0) })
 
 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
     query = "n"
@@ -48,6 +48,6 @@ DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
     query = "na"
 }
 
-PlaygroundPage.current.liveView = vc
+PlaygroundPage.current.liveView = viewController
 
 PlaygroundPage.current.needsIndefiniteExecution = true

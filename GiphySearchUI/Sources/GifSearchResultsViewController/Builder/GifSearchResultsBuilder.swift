@@ -4,13 +4,13 @@ public final class GifSearchResultsBuilder {
     public static func build(queryProvider: GifSearchQueryProvider,
                              fetcher: GifSearchResultsFetcher,
                              onGifSelected: @escaping (String) -> Void) -> GifSearchResultsViewController {
-        let vc = GifSearchResultsViewController.instantiate()
-        let presenter = GifSearchResultsPresenter(view: vc,
+        let viewController = GifSearchResultsViewController.instantiate()
+        let presenter = GifSearchResultsPresenter(view: viewController,
                                                   queryProvider: queryProvider,
                                                   fetcher: fetcher,
                                                   onGifSelected: onGifSelected)
-        vc.presenter = presenter
+        viewController.presenter = presenter
 
-        return vc
+        return viewController
     }
 }

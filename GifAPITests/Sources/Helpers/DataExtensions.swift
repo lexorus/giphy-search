@@ -10,4 +10,3 @@ extension Data {
         try? self.init(contentsOf: fileURL)
     }
 }
-

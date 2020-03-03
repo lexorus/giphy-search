@@ -41,11 +41,10 @@ let gifDataProvider: GifDataProvider = { closure in
     callCount += 1
 }
 
-let vc = GifSearchBuilder.build(gifResultsFetcher: Fetcher(),
-                                gifDataProvider: gifDataProvider,
-                                onGifSelected: { print($0) })
+let viewController = GifSearchBuilder.build(gifResultsFetcher: Fetcher(),
+                                            gifDataProvider: gifDataProvider,
+                                            onGifSelected: { print($0) })
 
-
-PlaygroundPage.current.liveView = vc
+PlaygroundPage.current.liveView = viewController
 
 PlaygroundPage.current.needsIndefiniteExecution = true

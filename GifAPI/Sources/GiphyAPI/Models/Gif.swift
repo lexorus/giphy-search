@@ -49,7 +49,8 @@ public extension Gif {
         bitlyURL = try container.decode(String.self, forKey: .bitlyURL)
         rating = try container.decode(String.self, forKey: .rating)
         let imagesContainer = try container.nestedContainer(keyedBy: ImagesCodingKeys.self, forKey: .images)
-        let fixedWidthStillImage = try imagesContainer.nestedContainer(keyedBy: ImagesCodingKeys.self, forKey: .fixedWidthStill)
+        let fixedWidthStillImage = try imagesContainer.nestedContainer(keyedBy: ImagesCodingKeys.self,
+                                                                       forKey: .fixedWidthStill)
         stillImageURL = try fixedWidthStillImage.decode(String.self, forKey: .url)
         let fixedWidthImage = try imagesContainer.nestedContainer(keyedBy: ImagesCodingKeys.self, forKey: .fixedWidth)
         fixedWidthVideoURL = try fixedWidthImage.decode(String.self, forKey: .mp4)

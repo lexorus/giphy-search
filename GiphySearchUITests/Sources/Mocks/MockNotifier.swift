@@ -2,6 +2,7 @@ import Foundation
 @testable import GiphySearchUI
 
 final class MockNotifier: Notifier {
+    // swiftlint:disable:next large_tuple
     var addObserverArgs: (observer: Any, selector: Selector, name: NSNotification.Name?)?
     func addObserver(_ observer: Any, selector aSelector: Selector, name aName: NSNotification.Name?) {
         addObserverArgs = (observer, aSelector, aName)
