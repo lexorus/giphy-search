@@ -386,7 +386,7 @@
 		656CFB6723F54C2D0097A1B5 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				B1D4C8A223FC796F00BB5918 /* GifSearchViewhController */,
+				B1D4C8A223FC796F00BB5918 /* GifSearchViewController */,
 				B1D4C8AE23FC7D5200BB5918 /* GifSearchResultsViewController */,
 				650F5E1323F5929800AA885E /* RandomGifViewController */,
 				B1B8134A240322F5003226D4 /* GifDetailsViewController */,
@@ -803,14 +803,14 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
-		B1D4C8A223FC796F00BB5918 /* GifSearchViewhController */ = {
+		B1D4C8A223FC796F00BB5918 /* GifSearchViewController */ = {
 			isa = PBXGroup;
 			children = (
 				B1D4C8A323FC79D700BB5918 /* View */,
 				B1D4C8A423FC79DC00BB5918 /* Presenter */,
 				B1D4C8A523FC79E400BB5918 /* Builder */,
 			);
-			path = GifSearchViewhController;
+			path = GifSearchViewController;
 			sourceTree = "<group>";
 		};
 		B1D4C8A323FC79D700BB5918 /* View */ = {
