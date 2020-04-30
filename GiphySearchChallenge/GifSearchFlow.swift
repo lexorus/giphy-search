@@ -11,7 +11,18 @@ final class GifSearchFlow {
         self.gifRepository = gifRepository
     }
 
-    func buildSearchViewController(completion: @escaping (String) -> Void) -> GifSearchViewController {
+    func start() -> UIViewController {
+        let onGifSelection: (String) -> Void = { [weak self] in
+            guard let detailedGifVC = self?.buildGifDetailsViewControllerForGif(with: $0) else { return }
+            self?.navigationController.pushViewController(detailedGifVC, animated: true)
+        }
+        let searchVC = buildSearchViewController(completion: onGifSelection)
+        navigationController.viewControllers = [searchVC]
+
+        return navigationController
+    }
+
+    private func buildSearchViewController(completion: @escaping (String) -> Void) -> GifSearchViewController {
         let fetcher: GifSearchResultsFetcher = gifRepository
         let gifDataProvider: GifDataProvider = { [weak self] completion in
             self?.gifRepository.getRandomGif { result in
@@ -32,20 +43,9 @@ final class GifSearchFlow {
                                       onGifSelected: completion)
     }
 
-    func buildGifDetailsViewControllerForGif(with id: String) -> GifDetailsViewController? {
+    private func buildGifDetailsViewControllerForGif(with id: String) -> GifDetailsViewController? {
         guard let gif = gifRepository.getGif(for: id),
             let gifPlayerData = GifPlayerData(gif: gif) else { return nil }
         return GifDetailsBuilder.build(gifData: gifPlayerData)
-    }
-
-    func start() -> UIViewController {
-        let onGifSelection: (String) -> Void = { [weak self] in
-            guard let detailedGifVC = self?.buildGifDetailsViewControllerForGif(with: $0) else { return }
-            self?.navigationController.pushViewController(detailedGifVC, animated: true)
-        }
-        let searchVC = buildSearchViewController(completion: onGifSelection)
-        navigationController.viewControllers = [searchVC]
-
-        return navigationController
     }
 }
