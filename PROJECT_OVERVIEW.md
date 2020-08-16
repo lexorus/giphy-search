@@ -10,7 +10,7 @@
 8. [Things left to do](#things-left-to-do)
 
 ## Overview
-The main idea behind the implementation of this project is that I wanted to learn/try something and not just "do it" in the most standard and familiar way I know.
+The main idea behind the implementation of this project is that I wanted to learn/try some new ideas, so don't expect the best code quality or test coverage.
 The concepts that were used as the foundation for this project are:
 
 1. Modularization
@@ -31,24 +31,24 @@ The concepts that were used as the foundation for this project are:
 
 
 ## Project infrastructure
-As mentioned in [Overview](#overview) section, the project has three main targets: `GifAPI`, `GiphySearchUI` and `GiphySearchChallenge`. Each of these can be developed and tested independently. Usually, I would use a dependency management system, like cocoapods, to trach the dependency versions and be able to lock to a specific version, but this would be an overkill for this project. Maybe this will be added at some point.
+As mentioned in [Overview](#overview) section, the project has three main targets: `GifAPI`, `GiphySearchUI` and `GiphySearchChallenge`. Each of these can be developed and tested independently. Usually, I would use a dependency management system, like cocoapods, to track the dependency versions and be able to lock to a specific version, but this would be an overkill for this project. Maybe this will be added at some point.
 
 ## API layer
-The `GifAPI` is a public interface that describes the promises of the API. The `GiphyAPI` is a concrete implementation of those promises. Usually, in case of a more complex API layer, I would build a more complex hierarchy, separating all the requests into models. You can check the way I would do it [here](https://github.com/lexorus/foursquare-restaurants-challenge/pull/4/files).
+The `GifAPI` is a public interface that describes the promises of the API. The `GiphyAPI` is a concrete implementation of those promises. Usually, in case of a more complex API layer, I would build a more complex hierarchy, separating all the requests into models.
 
 ## Presentation layer
 The presentation logic is separated among the 5 modules:
 1. `GifPlayer` - This view controller is responsible for repeated play of the GIF. It also shows the GIF title and link under the player.
 2. `GifDetails` - This view controller is used for presenting the details of the GIF, when it is selected from the results. The main responsibilities are to set up the navigation bar and the child `GifPlayer` controller.
 3. `RandomGif` - This view controller is responsible for fetching the random GIF every 10 seconds and display it using child `GifPlayer` controller. It also can handle fetching failure.
-4. `GifSearchResults` - The main responsibility of this view controller is to manage the collection view with results. The states it can handle right now are described in `GifSearchResultsState`. For now, it only has `Initial` stage, and should be extended with `Iterative` once the pagination will be added. The example of this can be found [here](https://github.com/lexorus/flickr-search-challenge/blob/master/FlickrSearchChallenge/Modules/Search/ViewController/SearchViewControllerState.swift). This controller also can handle error states. The search query is supplied using observer pattern and `GifSearchQueryProvider`.
-5. `GifSearch` - This is the first screen of the app. It has two child controllers: `RandomGif` and `GifSearchResults`. The main responsibility of this is to manage the `SearchBar` and keyboard appearance. It also injects the necessary dependencies into the child view controller.
+4. `GifSearchResults` - The main responsibility of this view controller is to manage the collection view with results. The states it can handle right now are described in `GifSearchResultsState`. For now, it only has `Initial` stage, and should be extended with `Iterative` once the pagination will be added. An example of this can be found [here](https://github.com/lexorus/flickr-search/blob/master/FlickrSearch/Modules/Search/ViewController/SearchViewControllerEventState.swift). This controller also can handle error states. The search query is supplied using the observer pattern and `GifSearchQueryProvider`.
+5. `GifSearch` - This is the first screen of the app. It has two child controllers: `RandomGif` and `GifSearchResults`. The main responsibility of this is to manage the `SearchBar` and keyboard appearance. It also injects the necessary dependencies into the child view controllers.
 
 This approach helps us to keep the responsibilities of the controllers atomic, having small reusable modules that are easy to understand and read.
 
 ## Application layer
-Since we moved all the `API` and `UI` logic away from the main application target, the only responsibilities left are:
-1. Define the flow of the application - `GifSearchFlow`. A very light version of coordinator pattern is used there.
+Since I moved all the `API` and `UI` logic away from the main application target, the only responsibilities left are:
+1. Define the flow of the application - `GifSearchFlow`.
 2. Mediate the communication between the `API` and `UI` layers. This is mostly done through abstractions and mapping.
 
 I would invest some more time into this layer since I'm not really happy with the way it looks right now, but this will really depend on the further development and decisions. Usually, the best architecture decision is taken as late as possible.
@@ -58,7 +58,7 @@ There are test targets for each of the layer, which contain a set of tests. Thos
 
 ## How to test
 
-If you will reach the maximum number of request to the `Giphy API`, you can switch to `OfflineFakeGifRepository` in `GifSearchFlow.swift:9`. The fake repository will mimic the behaviour of the real one, but will operate will only two mocked GIFs.
+By default, the `OfflineFakeGifRepository` is used as the API mock. The fake repository will mimic the behaviour of the real one, but will operate will only two mocked GIFs. If you want to use the project against the real Giphy API, you need to specify your API key instead of `your_giphy_api_token` and uncomment the necessary line in `GifSearchFlow.swift:10`.
 
 `Simulator:` You should be able to just run the application on the simulator with no problems.
 
@@ -67,7 +67,7 @@ If you will reach the maximum number of request to the `Giphy API`, you can swit
 ## Things left to do
 1. Pagination for search results
 
-    It shouldn't be hard to add since all the setup is done. We will need just a paginator that will keep track of the pages, and a new possible stage to the UI configuration. An example of this can be found [here](https://github.com/lexorus/flickr-search-challenge/blob/master/FlickrSearchChallenge/Modules/Search/Services/Paginator.swift).
+    It shouldn't be hard to add since all the setup is done. We will need just a paginator that will keep track of the pages, and a new possible stage to the UI configuration. An example of this can be found [here](https://github.com/lexorus/flickr-search/blob/0643e65b6c329d2dac885d753c39cef398c31f60/FlickrSearch/Modules/Search/ViewModel/Services/Paginator.swift).
 
 2. Tests coverage
 
@@ -77,6 +77,5 @@ If you will reach the maximum number of request to the `Giphy API`, you can swit
 
     There is some caching implemented in `GiphyRepository`, but it's only in-memory, and not implemented in the best way. 
 
-4. The age restriction view
-5. Debouncer for search
-6. A nice icon and launch screen :)
+4. Debouncer for search
+5. A nice icon and launch screen :)
