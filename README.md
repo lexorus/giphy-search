@@ -16,19 +16,19 @@ Small two screen application which allows you to search through the GIFs from Gi
 The main idea behind the implementation of this project is that I wanted to learn/try some new ideas, so don't expect the best code quality or test coverage.
 The concepts that were used as the foundation for this project are:
 
-1. Modularization
+1. **Modularization**
 
     The code is separated into different frameworks, based on the responsibilities it has. There are three targets: api, ui and application.
 
-2. Horizontal dependency graph
+2. **Horizontal dependency graph**
 
     Instead of having our UI module depending on API module, since the UI will need to use the functions/models provided by API, they depend on declared interfaces. This dependency inversion allows us to have this `App -> API, APP -> UI` instead of `App -> UI -> API`. Besides the separation of concerns, in a larger app we will have an increased build time as a bonus.
 
-3. Playground driven development
+3. **Playground driven development**
 
     Most of the code, including UI, was developed without launching the application. In each target you will find Playground pages, that were used to run the code. The UI code is working with mocked data, without doing any actual requests to the API. Note: to be able to actually run and see the results you need first to build the framework.
 
-4. Extensive usage of Container View Controllers
+4. **Extensive usage of Container View Controllers**
 
     There are many ways to separate the responsibilities of your view controller. Besides using MVP architectural pattern, I decided to separate the logic into small reusable view controllers. We have 5 view controllers in this two-screen app. For more detailed description please check [Presentation Layer](#presentation-layer) section.
 
