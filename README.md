@@ -34,7 +34,7 @@ The concepts that were used as the foundation for this project are:
 
 
 ## Project infrastructure
-As mentioned in [Overview](#overview) section, the project has three main targets: `GifAPI`, `GiphySearchUI` and `GiphySearchChallenge`. Each of these can be developed and tested independently. Usually, I would use a dependency management system, like cocoapods, to track the dependency versions and be able to lock to a specific version, but this would be an overkill for this project. Maybe this will be added at some point.
+As mentioned in [Overview](#overview) section, the project has three main targets: `GifAPI`, `GiphySearchUI` and `GiphySearch`. Each of these can be developed and tested independently. Usually, I would use a dependency management system, like cocoapods, to track the dependency versions and be able to lock to a specific version, but this would be an overkill for this project. Maybe this will be added at some point.
 
 ## API layer
 The `GifAPI` is a public interface that describes the promises of the API. The `GiphyAPI` is a concrete implementation of those promises. Usually, in case of a more complex API layer, I would build a more complex hierarchy, separating all the requests into models.

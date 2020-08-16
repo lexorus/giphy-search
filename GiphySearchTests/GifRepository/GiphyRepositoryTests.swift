@@ -1,7 +1,7 @@
 import XCTest
 import GifAPI
 import GiphySearchUI
-@testable import GiphySearchChallenge
+@testable import GiphySearch
 
 final class GiphyRepositoryTests: XCTestCase {
     var repository: GiphyRepository!

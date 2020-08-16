@@ -17,7 +17,7 @@
                BlueprintIdentifier = "65F6682023F04BCB00AA88B3"
                BuildableName = "GifAPI.framework"
                BlueprintName = "GifAPI"
-               ReferencedContainer = "container:GiphySearchChallenge.xcodeproj">
+               ReferencedContainer = "container:GiphySearch.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
             BlueprintIdentifier = "65F6682023F04BCB00AA88B3"
             BuildableName = "GifAPI.framework"
             BlueprintName = "GifAPI"
-            ReferencedContainer = "container:GiphySearchChallenge.xcodeproj">
+            ReferencedContainer = "container:GiphySearch.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
@@ -46,7 +46,7 @@
                BlueprintIdentifier = "65F6682823F04BCB00AA88B3"
                BuildableName = "GifAPITests.xctest"
                BlueprintName = "GifAPITests"
-               ReferencedContainer = "container:GiphySearchChallenge.xcodeproj">
+               ReferencedContainer = "container:GiphySearch.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -74,7 +74,7 @@
             BlueprintIdentifier = "65F6682023F04BCB00AA88B3"
             BuildableName = "GifAPI.framework"
             BlueprintName = "GifAPI"
-            ReferencedContainer = "container:GiphySearchChallenge.xcodeproj">
+            ReferencedContainer = "container:GiphySearch.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

@@ -17,7 +17,7 @@
                BlueprintIdentifier = "656CFB4923F54BD00097A1B5"
                BuildableName = "GiphySearchUI.framework"
                BlueprintName = "GiphySearchUI"
-               ReferencedContainer = "container:GiphySearchChallenge.xcodeproj">
+               ReferencedContainer = "container:GiphySearch.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
             BlueprintIdentifier = "656CFB4923F54BD00097A1B5"
             BuildableName = "GiphySearchUI.framework"
             BlueprintName = "GiphySearchUI"
-            ReferencedContainer = "container:GiphySearchChallenge.xcodeproj">
+            ReferencedContainer = "container:GiphySearch.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
@@ -46,7 +46,7 @@
                BlueprintIdentifier = "656CFB5123F54BD00097A1B5"
                BuildableName = "GiphySearchUITests.xctest"
                BlueprintName = "GiphySearchUITests"
-               ReferencedContainer = "container:GiphySearchChallenge.xcodeproj">
+               ReferencedContainer = "container:GiphySearch.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -74,7 +74,7 @@
             BlueprintIdentifier = "656CFB4923F54BD00097A1B5"
             BuildableName = "GiphySearchUI.framework"
             BlueprintName = "GiphySearchUI"
-            ReferencedContainer = "container:GiphySearchChallenge.xcodeproj">
+            ReferencedContainer = "container:GiphySearch.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "65F667F623F0498900AA88B3"
-               BuildableName = "GiphySearchChallenge.app"
-               BlueprintName = "GiphySearchChallenge"
-               ReferencedContainer = "container:GiphySearchChallenge.xcodeproj">
+               BuildableName = "GiphySearch.app"
+               BlueprintName = "GiphySearch"
+               ReferencedContainer = "container:GiphySearch.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,21 +35,21 @@
             BlueprintIdentifier = "65F6682023F04BCB00AA88B3"
             BuildableName = "GifAPI.framework"
             BlueprintName = "GifAPI"
-            ReferencedContainer = "container:GiphySearchChallenge.xcodeproj">
+            ReferencedContainer = "container:GiphySearch.xcodeproj">
          </BuildableReference>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "65F667F623F0498900AA88B3"
-            BuildableName = "GiphySearchChallenge.app"
-            BlueprintName = "GiphySearchChallenge"
-            ReferencedContainer = "container:GiphySearchChallenge.xcodeproj">
+            BuildableName = "GiphySearch.app"
+            BlueprintName = "GiphySearch"
+            ReferencedContainer = "container:GiphySearch.xcodeproj">
          </BuildableReference>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "656CFB4923F54BD00097A1B5"
             BuildableName = "GiphySearchUI.framework"
             BlueprintName = "GiphySearchUI"
-            ReferencedContainer = "container:GiphySearchChallenge.xcodeproj">
+            ReferencedContainer = "container:GiphySearch.xcodeproj">
          </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
@@ -60,7 +60,7 @@
                BlueprintIdentifier = "65F6682823F04BCB00AA88B3"
                BuildableName = "GifAPITests.xctest"
                BlueprintName = "GifAPITests"
-               ReferencedContainer = "container:GiphySearchChallenge.xcodeproj">
+               ReferencedContainer = "container:GiphySearch.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -70,7 +70,7 @@
                BlueprintIdentifier = "656CFB5123F54BD00097A1B5"
                BuildableName = "GiphySearchUITests.xctest"
                BlueprintName = "GiphySearchUITests"
-               ReferencedContainer = "container:GiphySearchChallenge.xcodeproj">
+               ReferencedContainer = "container:GiphySearch.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -78,9 +78,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "65F6680C23F0498A00AA88B3"
-               BuildableName = "GiphySearchChallengeTests.xctest"
-               BlueprintName = "GiphySearchChallengeTests"
-               ReferencedContainer = "container:GiphySearchChallenge.xcodeproj">
+               BuildableName = "GiphySearchTests.xctest"
+               BlueprintName = "GiphySearchTests"
+               ReferencedContainer = "container:GiphySearch.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -100,9 +100,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "65F667F623F0498900AA88B3"
-            BuildableName = "GiphySearchChallenge.app"
-            BlueprintName = "GiphySearchChallenge"
-            ReferencedContainer = "container:GiphySearchChallenge.xcodeproj">
+            BuildableName = "GiphySearch.app"
+            BlueprintName = "GiphySearch"
+            ReferencedContainer = "container:GiphySearch.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -117,9 +117,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "65F667F623F0498900AA88B3"
-            BuildableName = "GiphySearchChallenge.app"
-            BlueprintName = "GiphySearchChallenge"
-            ReferencedContainer = "container:GiphySearchChallenge.xcodeproj">
+            BuildableName = "GiphySearch.app"
+            BlueprintName = "GiphySearch"
+            ReferencedContainer = "container:GiphySearch.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
