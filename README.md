@@ -1,5 +1,5 @@
 ## Giphy Search
-Small two screen application which allows you to search through the GIFs from Giphy and view them. It also displays a random GIF every 10 seconds if you don't enter any query.
+Small two screen application which allows you to search through the GIFs from Giphy and view them. It also displays a random GIF every 10 seconds if you don't enter any query. **If you want to launch and test the application check [How to test](#how-to-test) section.**
 
 ## Contents
 
@@ -61,7 +61,7 @@ There are test targets for each of the layer, which contain a set of tests. Thos
 
 ## How to test
 
-By default, the `OfflineFakeGifRepository` is used as the API mock. The fake repository will mimic the behaviour of the real one, but will operate will only two mocked GIFs. If you want to use the project against the real Giphy API, you need to specify your API key instead of `your_giphy_api_token` and uncomment the necessary line in `GifSearchFlow.swift:10`.
+By default, the `OfflineFakeGifRepository` is used as the API mock. The fake repository will mimic the behaviour of the real one, but will operate will only two mocked GIFs. **If you want to use the project against the real Giphy API, you need to specify your API key instead of `your_giphy_api_token` and uncomment the necessary line in `GifSearchFlow.swift:10`.**
 
 `Simulator:` You should be able to just run the application on the simulator with no problems.
 
