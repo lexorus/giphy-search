@@ -14,7 +14,7 @@ final class OfflineFakeGifRepository {
     }
 
     var sampleGif2: Gif {
-        .init(id: "JRlqKEzTDKci5JPcaL", title: "",
+        .init(id: "JRlqKEzTDKci5JPcaL", title: "Naruto run",
               bitlyURL: "https://gph.is/g/4AQP3vN", rating: "g",
               stillImageURL: "https://media3.giphy.com/media/JRlqKEzTDKci5JPcaL/100w_s.gif?cid=e1bb72ffc913ff0cacf52046c2dbe311f3bf986661a800db&rid=100w_s.gif",
               fixedWidthVideoURL: "https://media3.giphy.com/media/JRlqKEzTDKci5JPcaL/100w.mp4?cid=e1bb72ffc913ff0cacf52046c2dbe311f3bf986661a800db&rid=100w.mp4",
