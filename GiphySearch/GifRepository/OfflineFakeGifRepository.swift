@@ -47,8 +47,10 @@ extension OfflineFakeGifRepository: GifRepository {
                        completion: @escaping (Result<[(id: String, url: String)], FetchingError>) -> Void)
         -> Cancellable? {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                let randomGifId = self.randomGif.id
-                let indexedResults = (0..<pageSize).map { _ in ("\(randomGifId)", "") }
+                let indexedResults = (0..<pageSize).map { _ -> (id: String, url: String) in
+                    let randomGif = self.randomGif!
+                    return ("\(randomGif.id)", "\(randomGif.stillImageURL)")
+                }
                 completion(.success(indexedResults))
             }
             return nil
